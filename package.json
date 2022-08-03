@@ -13,6 +13,7 @@
     "cls": "^0.1.5",
     "daisyui": "^2.20.0",
     "decimal.js": "^10.3.1",
+    "formula": "^3.18.0",
     "fp-ts": "^2.12.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -46,8 +47,14 @@
     ]
   },
   "devDependencies": {
+    "@types/decimal.js": "^7.4.0",
     "autoprefixer": "^10.4.8",
     "postcss": "^8.4.14",
+    "prettier": "^2.7.1",
+    "prettier-plugin-tailwindcss": "^0.1.13",
     "tailwindcss": "^3.1.7"
+  },
+  "volta": {
+    "node": "16.16.0"
   }
 }

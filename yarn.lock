@@ -1819,6 +1819,13 @@
   dependencies:
     "@types/node" "*"
 
+"@types/decimal.js@^7.4.0":
+  version "7.4.0"
+  resolved "https://registry.yarnpkg.com/@types/decimal.js/-/decimal.js-7.4.0.tgz#0289c1903c31a4e9b94caa741916a9bc64d1c585"
+  integrity sha512-TiP45voN8GdDib9QkkdMprTfs86xxHInqTxNPSGbF0m6X0LXVBjkFEKbbL9fqm4ZPoVFkG1p4F26on2MWGvW5w==
+  dependencies:
+    decimal.js "*"
+
 "@types/eslint-scope@^3.7.3":
   version "3.7.4"
   resolved "https://registry.yarnpkg.com/@types/eslint-scope/-/eslint-scope-3.7.4.tgz#37fc1223f0786c39627068a12e94d6e6fc61de16"
@@ -3504,7 +3511,7 @@ debug@^3.2.7:
   dependencies:
     ms "^2.1.1"
 
-decimal.js@^10.2.1, decimal.js@^10.3.1:
+decimal.js@*, decimal.js@^10.2.1, decimal.js@^10.3.1:
   version "10.3.1"
   resolved "https://registry.yarnpkg.com/decimal.js/-/decimal.js-10.3.1.tgz#d8c3a444a9c6774ba60ca6ad7261c3a94fd5e783"
   integrity sha512-V0pfhfr8suzyPGOx3nmq4aHqabehUZn6Ch9kyFpV79TGDTWFmHqUqXdabR7QHqxzrYolF4+tVmJhUG4OURg5dQ==
@@ -4436,6 +4443,13 @@ form-data@^3.0.0:
     asynckit "^0.4.0"
     combined-stream "^1.0.8"
     mime-types "^2.1.12"
+
+formula@^3.18.0:
+  version "3.18.0"
+  resolved "https://registry.yarnpkg.com/formula/-/formula-3.18.0.tgz#4f725e198748ca63b65cf7a6ca90f9dc6503798b"
+  integrity sha512-/olw5p2BwDMD8wqi0+ey1+ZoDQYtlJT/U+IDFsIWMhVMd3RQU9O7gQOAfYAcUOEZ/gnsRhNbntO0ybiW7A36AQ==
+  dependencies:
+    jsonpath-plus "^6.0.1"
 
 forwarded@0.2.0:
   version "0.2.0"
@@ -5806,6 +5820,11 @@ jsonfile@^6.0.1:
   optionalDependencies:
     graceful-fs "^4.1.6"
 
+jsonpath-plus@^6.0.1:
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/jsonpath-plus/-/jsonpath-plus-6.0.1.tgz#9a3e16cedadfab07a3d8dc4e8cd5df4ed8f49c4d"
+  integrity sha512-EvGovdvau6FyLexFH2OeXfIITlgIbgZoAZe3usiySeaIDm5QS+A10DKNpaPBBqqRSZr2HN6HVNXxtwUAr2apEw==
+
 jsonpointer@^5.0.0:
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/jsonpointer/-/jsonpointer-5.0.1.tgz#2110e0af0900fd37467b5907ecd13a7884a1b559"
@@ -7119,6 +7138,16 @@ prelude-ls@~1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/prelude-ls/-/prelude-ls-1.1.2.tgz#21932a549f5e52ffd9a827f570e04be62a97da54"
   integrity sha512-ESF23V4SKG6lVSGZgYNpbsiaAkdab6ZgOxe52p7+Kid3W3u3bxR4Vfd/o21dmN7jSt0IwgZ4v5MUd26FEtXE9w==
+
+prettier-plugin-tailwindcss@^0.1.13:
+  version "0.1.13"
+  resolved "https://registry.yarnpkg.com/prettier-plugin-tailwindcss/-/prettier-plugin-tailwindcss-0.1.13.tgz#ca1071361dc7e2ed5d95a2ee36825ce45f814942"
+  integrity sha512-/EKQURUrxLu66CMUg4+1LwGdxnz8of7IDvrSLqEtDqhLH61SAlNNUSr90UTvZaemujgl3OH/VHg+fyGltrNixw==
+
+prettier@^2.7.1:
+  version "2.7.1"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.7.1.tgz#e235806850d057f97bb08368a4f7d899f7760c64"
+  integrity sha512-ujppO+MkdPqoVINuDFDRLClm7D78qbDt0/NR+wp5FqEZOoTNAjPHWj17QRhu7geIHJfcNhRk1XVQmF8Bp3ye+g==
 
 pretty-bytes@^5.3.0, pretty-bytes@^5.4.1:
   version "5.6.0"
