@@ -1,6 +1,8 @@
 import { GenderInput, TextField } from './components';
 
 function App() {
+  console.log(window.google);
+
   return (
     <div className="mx-auto my-12 w-96">
       <div className="mockup-window border bg-base-300">
