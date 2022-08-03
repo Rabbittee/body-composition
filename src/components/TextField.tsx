@@ -1,5 +1,5 @@
 import { Gender, InputType, INPUT_TYPE } from '../models';
-import { calRedman } from '../utils';
+import { TDEE } from '../utils';
 
 type Props = {
   type: InputType;
@@ -18,8 +18,11 @@ function Comp({ type }: Props) {
 
 function Birth() {
   const birth = new Date('2000-01-01');
-  const redman = calRedman(Gender.Male, 60, birth);
-  console.log('🚀 ~ Birth ~ redman', redman);
+  const redman = TDEE.calRedman(Gender.Male, 60, birth);
+  console.log('🚀 ~ Birth ~ TEDD: redman', redman);
+
+  const fao = TDEE.calFAO(Gender.Male, 60);
+  console.log('🚀 ~ Birth ~ TEDD: FAO', fao);
 
   return <Comp type={InputType.Birth} />;
 }
