@@ -11,7 +11,7 @@
     "@types/node": "^16.7.13",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
-    "cls": "^0.1.5",
+    "clsx": "^1.2.1",
     "daisyui": "^2.20.0",
     "decimal.js": "^10.3.1",
     "formula": "^3.18.0",
