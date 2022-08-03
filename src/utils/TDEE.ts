@@ -1,6 +1,6 @@
 import Decimal from 'decimal.js';
 import { yearfrac } from 'formula';
-import { Gender } from '../types';
+import { Gender } from '../models';
 
 function FAOMale(weight: number) {
   return new Decimal(weight).toPower(0.73).times(152).round();
