@@ -1,17 +1,25 @@
+import { ChangeEventHandler } from 'react';
 import { Gender, InputType, INPUT_TYPE } from '../models';
+import { useStore } from '../store';
 import { TDEE } from '../utils';
 
 type Props = {
   type: InputType;
+  onChange?: ChangeEventHandler<HTMLInputElement>;
 };
 
-function Comp({ type }: Props) {
+function Comp({ type, onChange }: Props) {
   const inputType = INPUT_TYPE[type];
 
   return (
     <label className="input-group">
       <span>{inputType.text}</span>
-      <input type="text" placeholder={inputType.placeholder} className="input input-bordered" />
+      <input
+        type="text"
+        placeholder={inputType.placeholder}
+        className="input input-bordered"
+        onChange={onChange}
+      />
     </label>
   );
 }
@@ -28,7 +36,14 @@ function Birth() {
 }
 
 function Height() {
-  return <Comp type={InputType.Height} />;
+  const setHeight = useStore((state) => state.setHeight);
+
+  const onChange: ChangeEventHandler<HTMLInputElement> = (e) => {
+    const value = Number(e.target.value);
+    setHeight(value);
+  };
+
+  return <Comp type={InputType.Height} onChange={onChange} />;
 }
 
 function Weight() {

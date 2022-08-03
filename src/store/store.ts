@@ -2,12 +2,17 @@ import create, { GetState } from 'zustand';
 import { devtools, NamedSet } from 'zustand/middleware';
 import { Gender } from '../models';
 
+type User = {
+  id: string;
+  name: string;
+};
 export type AppState = {
   birthday: Date;
   gender: Gender;
   height: number;
   weight: number;
   bodyFat: number;
+  user?: User;
 };
 
 type AppAction = {
@@ -16,6 +21,8 @@ type AppAction = {
   setHeight: (val: number) => void;
   setWeight: (val: number) => void;
   setBodyFat: (val: number) => void;
+
+  setUser: (user: User) => void;
 };
 
 type StoreType = AppState & AppAction;
@@ -30,14 +37,16 @@ const initialState: AppState = {
 
 const store = (set: NamedSet<StoreType>, get: GetState<StoreType>) => ({
   ...initialState,
-  setBirthday: (val: Date) => {},
-  setGender: (val: Gender) => {},
-  setHeight: (val: number) => {},
-  setWeight: (val: number) => {},
-  setBodyFat: (val: number) => {},
+  setBirthday: (birthday: Date) => set(() => ({ birthday }), false, 'setBirthday'),
+  setGender: (gender: Gender) => set(() => ({ gender }), false, 'setGender'),
+  setHeight: (height: number) => set(() => ({ height }), false, 'setHeight'),
+  setWeight: (weight: number) => set(() => ({ weight }), false, 'setWeight'),
+  setBodyFat: (bodyFat: number) => set(() => ({ bodyFat }), false, 'setBodyFat'),
+
+  setUser: (user: User) => set(() => ({ user }), false, 'setUser'),
 });
 
 export const useStore =
   process.env.NODE_ENV === 'development' || process.env.REACT_APP_DEBUG === '1'
-    ? create<StoreType>(devtools(store))
+    ? create<StoreType>(devtools(store, { name: 'bodyStore' }))
     : create(store);
