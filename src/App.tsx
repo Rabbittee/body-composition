@@ -1,6 +1,6 @@
 import { GenderInput, TextField } from './components';
 import { Gender } from './models';
-import { BMR } from './utils';
+import { BMR, BSA } from './utils';
 
 function App() {
   console.log(window.google);
@@ -20,6 +20,15 @@ function App() {
 
   const robertsonAndReid = BMR.calRobertsonAndReid(60, 172, Gender.Male, birth);
   console.log('🚀 ~ App ~ BMR: Robertson and Reid', robertsonAndReid);
+
+  console.log(
+    'BSA ~ :',
+    BSA.calDubois(172, 60),
+    BSA.calDuboisCorrected(172, 60),
+    BSA.calYu(172, 60),
+    BSA.calHaycock(172, 60),
+    BSA.calMosteller(172, 60)
+  );
 
   return (
     <div className="mx-auto my-12 w-96">
