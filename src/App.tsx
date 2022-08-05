@@ -1,4 +1,4 @@
-import { GenderInput, TextField } from './components';
+import { InputField } from './components';
 import { Gender } from './models';
 import { BMR, BSA } from './utils';
 
@@ -35,15 +35,11 @@ function App() {
       <div className="mockup-window border bg-base-300">
         <div className="flex justify-center bg-base-200 px-4 py-16">
           <div className="form-control space-y-2">
-            <TextField.Birth />
-
-            <GenderInput />
-
-            <TextField.Height />
-
-            <TextField.Weight />
-
-            <TextField.BodyFat />
+            <InputField.Birth />
+            <InputField.Gender />
+            <InputField.Height />
+            <InputField.Weight />
+            <InputField.BodyFat />
           </div>
         </div>
       </div>
