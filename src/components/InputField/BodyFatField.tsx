@@ -1,8 +1,8 @@
-import { FieldProps, FieldType } from './FieldType';
-import { FieldBase } from './FieldBase';
+import { InputFieldProps, InputFieldType } from './InputFieldType';
+import { InputFieldBase } from './InputFieldBase';
 
-function BodyFatField(props: FieldProps) {
-  return <FieldBase type={FieldType.BodyFat} {...props} />;
+function BodyFatField(props: InputFieldProps) {
+  return <InputFieldBase type={InputFieldType.BodyFat} {...props} />;
 }
 
 export default BodyFatField;

@@ -1,8 +1,8 @@
-import { FieldProps, FieldType } from './FieldType';
-import { FieldBase } from './FieldBase';
+import { InputFieldProps, InputFieldType } from './InputFieldType';
+import { InputFieldBase } from './InputFieldBase';
 
-function HeightField(props: FieldProps) {
-  return <FieldBase type={FieldType.Height} {...props} />;
+function HeightField(props: InputFieldProps) {
+  return <InputFieldBase type={InputFieldType.Height} {...props} />;
 }
 
 export default HeightField;

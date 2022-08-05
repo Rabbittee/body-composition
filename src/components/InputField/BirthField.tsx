@@ -1,17 +1,8 @@
-import { FieldProps } from './FieldType';
+import { InputFieldProps, InputFieldType } from './InputFieldType';
+import { InputFieldBase } from './InputFieldBase';
 
-function BirthField({ value = '2001-01-01', onChange = () => {} }: FieldProps) {
-  return (
-    <label className="input-group">
-      <span>生日</span>
-      <input
-        className="input input-bordered flex-1"
-        type="date"
-        value={value}
-        onChange={onChange}
-      />
-    </label>
-  );
+function BirthField({ value = '2001-01-01', onChange = () => {} }: InputFieldProps) {
+  return <InputFieldBase type={InputFieldType.Birth} value={value} onChange={onChange} />;
 }
 
 export default BirthField;
