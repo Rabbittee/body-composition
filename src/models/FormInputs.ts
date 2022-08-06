@@ -1,7 +1,7 @@
 import { Gender } from '.';
 
 export type FormInputs = {
-  birthday: Date;
+  birth: Date;
   gender: Gender;
   height: number;
   weight: number;

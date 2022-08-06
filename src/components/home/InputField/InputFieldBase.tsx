@@ -1,11 +1,12 @@
 import { useFormContext } from 'react-hook-form';
-import { InputFieldProps, InputFieldType, INPUT_TYPE } from './InputFieldType';
+import { InputFieldType, INPUT_TYPE } from './InputFieldType';
 
-type Props = InputFieldProps & {
+type Props = {
   type: InputFieldType;
+  defaultValue?: string;
 };
 
-export function InputFieldBase({ value = '', type, onChange = () => {} }: Props) {
+export function InputFieldBase({ type, defaultValue }: Props) {
   const { register } = useFormContext();
   const inputType = INPUT_TYPE[type];
 
@@ -22,8 +23,7 @@ export function InputFieldBase({ value = '', type, onChange = () => {} }: Props)
         type={fieldType ?? 'text'}
         className="input input-bordered flex-1 text-blueGray"
         placeholder={placeholder}
-        value={value}
-        onChange={onChange}
+        defaultValue={defaultValue}
       />
     </div>
   );
