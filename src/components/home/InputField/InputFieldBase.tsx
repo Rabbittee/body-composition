@@ -10,7 +10,7 @@ export function InputFieldBase({ type, defaultValue }: Props) {
   const { register } = useFormContext();
   const inputType = INPUT_TYPE[type];
 
-  const { text, type: fieldType, name, placeholder } = inputType;
+  const { text, type: fieldType = 'text', name, placeholder } = inputType;
 
   return (
     <div className="form-control">
@@ -20,7 +20,7 @@ export function InputFieldBase({ type, defaultValue }: Props) {
 
       <input
         {...register(name)}
-        type={fieldType ?? 'text'}
+        type={fieldType}
         className="input input-bordered flex-1 text-blueGray"
         placeholder={placeholder}
         defaultValue={defaultValue}
