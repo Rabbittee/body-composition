@@ -1,3 +1,4 @@
+import { useFormContext } from 'react-hook-form';
 import { InputFieldProps, InputFieldType, INPUT_TYPE } from './InputFieldType';
 
 type Props = InputFieldProps & {
@@ -5,18 +6,22 @@ type Props = InputFieldProps & {
 };
 
 export function InputFieldBase({ value = '', type, onChange = () => {} }: Props) {
+  const { register } = useFormContext();
   const inputType = INPUT_TYPE[type];
+
+  const { text, type: fieldType, name, placeholder } = inputType;
 
   return (
     <div className="form-control">
       <label className="label">
-        <span className="label-text text-blueGray">{inputType.text}</span>
+        <span className="label-text text-blueGray">{text}</span>
       </label>
 
       <input
-        type={inputType.type ?? 'text'}
+        {...register(name)}
+        type={fieldType ?? 'text'}
         className="input input-bordered flex-1 text-blueGray"
-        placeholder={inputType.placeholder}
+        placeholder={placeholder}
         value={value}
         onChange={onChange}
       />

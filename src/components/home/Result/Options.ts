@@ -1,5 +1,5 @@
-import { Gender } from '../../models';
-import { BMR, BSA, TDEE } from '../../utils';
+import { Gender } from '../../../models';
+import { BMR, BSA, TDEE } from '../../../utils';
 
 type OptionEntity = {
   text: string;

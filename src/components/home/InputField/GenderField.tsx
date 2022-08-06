@@ -1,5 +1,6 @@
 import { ChangeEventHandler } from 'react';
-import { Gender } from '../../models';
+import { useFormContext } from 'react-hook-form';
+import { Gender } from '../../../models';
 
 type Props = {
   value?: Gender;
@@ -7,6 +8,8 @@ type Props = {
 };
 
 export default function GenderField({ value = Gender.Male, onChange = () => {} }: Props) {
+  const { register } = useFormContext();
+
   return (
     <div className="form-control">
       <label className="label">
@@ -14,6 +17,7 @@ export default function GenderField({ value = Gender.Male, onChange = () => {} }
       </label>
 
       <select
+        {...register('gender')}
         className="select select-bordered flex-1 text-blueGray"
         value={value}
         onChange={onChange}
