@@ -15,12 +15,12 @@ const BRMOptions: OptionEntity[] = [
   { text: 'Oxford Equation', fn: BMR.calOxfordEquation },
 ];
 
-const TDEEOptions = [
+const TDEEOptions: OptionEntity[] = [
   { text: 'FAO, 1957', desc: '來自FAO的營養研究', fn: TDEE.calFAO },
   { text: 'Redman, 2014', desc: '來自雙標水研究', fn: TDEE.calRedman },
 ];
 
-const BSAOptions = [
+const BSAOptions: OptionEntity[] = [
   { text: 'Dubois', desc: '肥胖者會低估3-5%', fn: BSA.calDubois },
   { text: 'Dubois, Corrected', desc: '校正肥胖不準確', fn: BSA.calDuboisCorrected },
   { text: 'Yu, 2013', desc: '研究來自台灣工人', fn: BSA.calYu },

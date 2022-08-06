@@ -1,3 +1,4 @@
+import { InformationCircleIcon } from '@heroicons/react/solid';
 import { ITEM_TYPE, ResultItemType } from './Options';
 
 type Props = {
@@ -15,7 +16,10 @@ function ResultItem({ type, value }: Props) {
           <option key={o.text}>{o.text}</option>
         ))}
       </select>
-      <div className="text-3xl font-black text-teal">{title}</div>
+      <div className="flex items-center space-x-1 text-3xl font-black text-teal">
+        {title}
+        <InformationCircleIcon className="h-4 w-4 text-teal" />
+      </div>
       <div className="text-9xl font-black text-teal">{value}</div>
     </div>
   );

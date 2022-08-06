@@ -18,8 +18,8 @@ export default function GenderField({ value = Gender.Male, onChange = () => {} }
         value={value}
         onChange={onChange}
       >
-        <option value={Gender.Male}>Male</option>
-        <option value={Gender.Female}>Female</option>
+        <option value={Gender.Male}>男</option>
+        <option value={Gender.Female}>女</option>
       </select>
     </div>
   );

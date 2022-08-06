@@ -4,6 +4,7 @@
   "homepage": "https://rabbittee.github.io/body-composition",
   "private": true,
   "dependencies": {
+    "@heroicons/react": "^1.0.6",
     "clsx": "^1.2.1",
     "daisyui": "^2.20.0",
     "decimal.js": "^10.3.1",
