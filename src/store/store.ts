@@ -1,6 +1,6 @@
 import create, { GetState } from 'zustand';
 import { devtools, NamedSet } from 'zustand/middleware';
-import { FormInputs } from '../models';
+import { BodyInfo } from '../models';
 
 type User = {
   id: string;
@@ -8,12 +8,12 @@ type User = {
 };
 
 export type AppState = {
-  bodyInfo?: FormInputs;
+  bodyInfo?: BodyInfo;
   user?: User;
 };
 
 type AppAction = {
-  setBodyInfo: (val: FormInputs) => void;
+  setBodyInfo: (val: BodyInfo) => void;
   setUser: (user: User) => void;
 };
 
@@ -23,7 +23,7 @@ const initialState: AppState = {};
 
 const store = (set: NamedSet<StoreType>, get: GetState<StoreType>) => ({
   ...initialState,
-  setBodyInfo: (bodyInfo: FormInputs) => set(() => ({ bodyInfo }), false, 'setBodyInfo'),
+  setBodyInfo: (bodyInfo: BodyInfo) => set(() => ({ bodyInfo }), false, 'setBodyInfo'),
 
   setUser: (user: User) => set(() => ({ user }), false, 'setUser'),
 });

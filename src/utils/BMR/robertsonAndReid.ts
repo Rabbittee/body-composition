@@ -1,6 +1,6 @@
 import Decimal from 'decimal.js';
 import { yearfrac } from 'formula';
-import { Gender } from '../../models';
+import { BodyInfo, Gender } from '../../models';
 import { RobertsonReidParameters } from './parameters';
 
 // =iferror(
@@ -10,12 +10,9 @@ import { RobertsonReidParameters } from './parameters';
 //     "無法計算"
 // )
 
-export const calRobertsonAndReid = (
-  weight: number,
-  height: number,
-  gender: Gender,
-  birth: Date
-) => {
+export const calRobertsonAndReid = (bodyInfo: BodyInfo) => {
+  const { birth, height, weight, gender } = bodyInfo;
+
   const age = new Decimal(yearfrac(birth, new Date())).round();
   const index = age.minus(3).toNumber();
 

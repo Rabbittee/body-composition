@@ -1,5 +1,5 @@
 import Decimal from 'decimal.js';
-import { Gender } from '../../models';
+import { BodyInfo, Gender } from '../../models';
 
 // LBM = (Weight[kg] * (100 - Body Fat[%])/100
 function LBMBase(weight: number, bodyFat: number) {
@@ -17,7 +17,10 @@ function LBMFemale(weight: number, height: number) {
 }
 
 // BMR = 370 + (21.6 * Lean Body Mass[kg])
-export function calKatchMcArdle(height: number, weight: number, gender: Gender, bodyFat?: number) {
+// FIXME: bodyFat shouldn't be undefined
+export function calKatchMcArdle(bodyInfo: BodyInfo) {
+  const { height, weight, gender, bodyFat } = bodyInfo;
+
   let LBM = new Decimal(0);
 
   if (bodyFat !== undefined) {

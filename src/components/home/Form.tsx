@@ -2,7 +2,7 @@ import { FormProvider, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { InputField } from '..';
-import { FormInputs } from '../../models';
+import { BodyInfo } from '../../models';
 import { useStore } from '../../store';
 
 const schema = yup.object().shape({
@@ -14,14 +14,14 @@ const schema = yup.object().shape({
 });
 
 function Form() {
-  const methods = useForm<FormInputs>({
+  const methods = useForm<BodyInfo>({
     resolver: yupResolver(schema),
   });
   const { handleSubmit } = methods;
 
   const setBodyInfo = useStore((state) => state.setBodyInfo);
 
-  function onSubmit(data: FormInputs) {
+  function onSubmit(data: BodyInfo) {
     setBodyInfo(data);
   }
 
