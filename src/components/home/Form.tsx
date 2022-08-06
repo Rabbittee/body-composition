@@ -5,7 +5,7 @@ import { InputField } from '..';
 import { BodyInfo } from '../../models';
 import { defaultBodyInfo, useStore } from '../../store';
 
-const schema = yup.object().shape({
+const schema: yup.SchemaOf<BodyInfo> = yup.object().shape({
   birth: yup.string().required(),
   gender: yup.number().required(),
   height: yup.number().required(),
