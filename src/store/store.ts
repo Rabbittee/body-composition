@@ -1,17 +1,13 @@
 import create, { GetState } from 'zustand';
 import { devtools, NamedSet } from 'zustand/middleware';
-import { Gender } from '../models';
+import { FormInputs, Gender } from '../models';
 
 type User = {
   id: string;
   name: string;
 };
-export type AppState = {
-  birthday: Date;
-  gender: Gender;
-  height: number;
-  weight: number;
-  bodyFat: number;
+
+export type AppState = FormInputs & {
   user?: User;
 };
 

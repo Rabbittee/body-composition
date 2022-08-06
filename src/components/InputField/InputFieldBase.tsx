@@ -8,15 +8,18 @@ export function InputFieldBase({ value = '', type, onChange = () => {} }: Props)
   const inputType = INPUT_TYPE[type];
 
   return (
-    <label className="input-group">
-      <span>{inputType.text}</span>
+    <div className="form-control">
+      <label className="label">
+        <span className="label-text text-blueGray">{inputType.text}</span>
+      </label>
+
       <input
         type={inputType.type ?? 'text'}
-        className="input input-bordered flex-1"
+        className="input input-bordered flex-1 text-blueGray"
         placeholder={inputType.placeholder}
         value={value}
         onChange={onChange}
       />
-    </label>
+    </div>
   );
 }

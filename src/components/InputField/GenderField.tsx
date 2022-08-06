@@ -8,13 +8,19 @@ type Props = {
 
 export default function GenderField({ value = Gender.Male, onChange = () => {} }: Props) {
   return (
-    <label className="input-group">
-      <span>性別</span>
+    <div className="form-control">
+      <label className="label">
+        <span className="label-text text-blueGray">性別</span>
+      </label>
 
-      <select className="select select-bordered flex-1" value={value} onChange={onChange}>
-        <option>Male</option>
-        <option>Female</option>
+      <select
+        className="select select-bordered flex-1 text-blueGray"
+        value={value}
+        onChange={onChange}
+      >
+        <option value={Gender.Male}>Male</option>
+        <option value={Gender.Female}>Female</option>
       </select>
-    </label>
+    </div>
   );
 }
