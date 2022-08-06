@@ -13,24 +13,28 @@ import { RobertsonReidParameters } from './parameters';
 export const calRobertsonAndReid = (bodyInfo: BodyInfo) => {
   const { birth, height, weight, gender } = bodyInfo;
 
-  const age = new Decimal(yearfrac(birth, new Date())).round();
-  const index = age.minus(3).toNumber();
+  try {
+    const age = new Decimal(yearfrac(birth, new Date())).round();
+    const index = age.minus(3).toNumber();
 
-  const base = new Decimal(0.007184)
-    .times(new Decimal(height).toPower(0.725))
-    .times(new Decimal(weight).toPower(0.425))
-    .times(24);
+    const base = new Decimal(0.007184)
+      .times(new Decimal(height).toPower(0.725))
+      .times(new Decimal(weight).toPower(0.425))
+      .times(24);
 
-  if (gender === Gender.Male) {
+    if (gender === Gender.Male) {
+      return [
+        base.times(RobertsonReidParameters.Male_Low[index]),
+        base.times(RobertsonReidParameters.Male_Mean[index]),
+        base.times(RobertsonReidParameters.Male_High[index]),
+      ].map((value) => value.round().toString());
+    }
     return [
-      base.times(RobertsonReidParameters.Male_Low[index]),
-      base.times(RobertsonReidParameters.Male_Mean[index]),
-      base.times(RobertsonReidParameters.Male_High[index]),
+      base.times(RobertsonReidParameters.Female_Low[index]),
+      base.times(RobertsonReidParameters.Female_Mean[index]),
+      base.times(RobertsonReidParameters.Female_High[index]),
     ].map((value) => value.round().toString());
+  } catch {
+    return '-';
   }
-  return [
-    base.times(RobertsonReidParameters.Female_Low[index]),
-    base.times(RobertsonReidParameters.Female_Mean[index]),
-    base.times(RobertsonReidParameters.Female_High[index]),
-  ].map((value) => value.round().toString());
 };

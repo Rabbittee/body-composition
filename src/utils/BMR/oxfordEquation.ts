@@ -7,17 +7,21 @@ import { oxfordParameters } from './parameters';
 export const calOxfordEquation = (bodyInfo: BodyInfo) => {
   const { weight, gender, birth } = bodyInfo;
 
-  const age = new Decimal(yearfrac(birth, new Date())).round();
-  const index = age.minus(3).toNumber();
+  try {
+    const age = new Decimal(yearfrac(birth, new Date())).round();
+    const index = age.minus(3).toNumber();
 
-  if (gender === Gender.Male) {
-    return new Decimal(oxfordParameters.Oxford_Man_A[index])
-      .add(new Decimal(oxfordParameters.Oxford_Man_B[index]).times(weight))
+    if (gender === Gender.Male) {
+      return new Decimal(oxfordParameters.Oxford_Man_A[index])
+        .add(new Decimal(oxfordParameters.Oxford_Man_B[index]).times(weight))
+        .round()
+        .toString();
+    }
+    return new Decimal(oxfordParameters.Oxford_Woman_A[index])
+      .add(new Decimal(oxfordParameters.Oxford_Woman_B[index]).times(weight))
       .round()
       .toString();
+  } catch {
+    return '-';
   }
-  return new Decimal(oxfordParameters.Oxford_Woman_A[index])
-    .add(new Decimal(oxfordParameters.Oxford_Woman_B[index]).times(weight))
-    .round()
-    .toString();
 };

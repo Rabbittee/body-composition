@@ -40,7 +40,8 @@ function ResultItem({ type }: Props) {
         {title}
         <InformationCircleIcon className="h-4 w-4 text-teal" />
       </div>
-      <div className="text-9xl font-black text-teal">{value}</div>
+
+      <div className="text-9xl font-black text-teal">{Array.isArray(value) ? value[0] : value}</div>
     </div>
   );
 }
