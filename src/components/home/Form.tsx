@@ -3,10 +3,10 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { InputField } from '..';
 import { BodyInfo } from '../../models';
-import { useStore } from '../../store';
+import { defaultBodyInfo, useStore } from '../../store';
 
 const schema = yup.object().shape({
-  birth: yup.date().required(),
+  birth: yup.string().required(),
   gender: yup.number().required(),
   height: yup.number().required(),
   weight: yup.number().required(),
@@ -15,6 +15,7 @@ const schema = yup.object().shape({
 
 function Form() {
   const methods = useForm<BodyInfo>({
+    defaultValues: defaultBodyInfo,
     resolver: yupResolver(schema),
   });
   const { handleSubmit } = methods;

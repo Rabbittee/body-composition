@@ -1,14 +1,22 @@
 import create, { GetState } from 'zustand';
 import { devtools, NamedSet } from 'zustand/middleware';
-import { BodyInfo } from '../models';
+import { BodyInfo, Gender } from '../models';
 
 type User = {
   id: string;
   name: string;
 };
 
+export const defaultBodyInfo: BodyInfo = {
+  birth: '2001-01-01',
+  gender: Gender.Male,
+  height: 175,
+  weight: 70,
+  bodyFat: 20,
+};
+
 export type AppState = {
-  bodyInfo?: BodyInfo;
+  bodyInfo: BodyInfo;
   user?: User;
 };
 
@@ -19,7 +27,9 @@ type AppAction = {
 
 type StoreType = AppState & AppAction;
 
-const initialState: AppState = {};
+const initialState: AppState = {
+  bodyInfo: defaultBodyInfo,
+};
 
 const store = (set: NamedSet<StoreType>, get: GetState<StoreType>) => ({
   ...initialState,

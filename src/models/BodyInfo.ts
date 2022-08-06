@@ -1,7 +1,7 @@
 import { Gender } from '.';
 
 export type BodyInfo = {
-  birth: Date;
+  birth: string;
   gender: Gender;
   height: number;
   weight: number;
