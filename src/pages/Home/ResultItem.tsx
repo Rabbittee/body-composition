@@ -6,16 +6,16 @@ type Props = {
 };
 
 function ResultItem({ type, value }: Props) {
-  const { text, options } = ITEM_TYPE[type];
+  const { title, options } = ITEM_TYPE[type];
 
   return (
     <div>
       <select className="select select-ghost mb-2 text-blueGray focus:outline-0">
         {options.map((o) => (
-          <option key={o}>{o}</option>
+          <option key={o.text}>{o.text}</option>
         ))}
       </select>
-      <div className="text-3xl font-black text-teal">{text}</div>
+      <div className="text-3xl font-black text-teal">{title}</div>
       <div className="text-9xl font-black text-teal">{value}</div>
     </div>
   );
