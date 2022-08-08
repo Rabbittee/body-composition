@@ -1,6 +1,6 @@
 import Decimal from 'decimal.js';
 import { yearfrac } from 'formula';
-import { Gender } from '../../models';
+import { BodyInfo, Gender } from '../../models';
 import { RobertsonReidParameters } from './parameters';
 
 // =iferror(
@@ -10,30 +10,31 @@ import { RobertsonReidParameters } from './parameters';
 //     "無法計算"
 // )
 
-export const calRobertsonAndReid = (
-  weight: number,
-  height: number,
-  gender: Gender,
-  birth: Date
-) => {
-  const age = new Decimal(yearfrac(birth, new Date())).round();
-  const index = age.minus(3).toNumber();
+export const calRobertsonAndReid = (bodyInfo: BodyInfo) => {
+  const { birth, height, weight, gender } = bodyInfo;
 
-  const base = new Decimal(0.007184)
-    .times(new Decimal(height).toPower(0.725))
-    .times(new Decimal(weight).toPower(0.425))
-    .times(24);
+  try {
+    const age = new Decimal(yearfrac(birth, new Date())).round();
+    const index = age.minus(3).toNumber();
 
-  if (gender === Gender.Male) {
+    const base = new Decimal(0.007184)
+      .times(new Decimal(height).toPower(0.725))
+      .times(new Decimal(weight).toPower(0.425))
+      .times(24);
+
+    if (gender === Gender.Male) {
+      return [
+        base.times(RobertsonReidParameters.Male_Low[index]),
+        base.times(RobertsonReidParameters.Male_Mean[index]),
+        base.times(RobertsonReidParameters.Male_High[index]),
+      ].map((value) => value.round().toString());
+    }
     return [
-      base.times(RobertsonReidParameters.Male_Low[index]),
-      base.times(RobertsonReidParameters.Male_Mean[index]),
-      base.times(RobertsonReidParameters.Male_High[index]),
+      base.times(RobertsonReidParameters.Female_Low[index]),
+      base.times(RobertsonReidParameters.Female_Mean[index]),
+      base.times(RobertsonReidParameters.Female_High[index]),
     ].map((value) => value.round().toString());
+  } catch {
+    return '-';
   }
-  return [
-    base.times(RobertsonReidParameters.Female_Low[index]),
-    base.times(RobertsonReidParameters.Female_Mean[index]),
-    base.times(RobertsonReidParameters.Female_High[index]),
-  ].map((value) => value.round().toString());
 };

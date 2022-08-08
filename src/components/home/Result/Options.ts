@@ -1,10 +1,10 @@
-import { Gender } from '../../models';
-import { BMR, BSA, TDEE } from '../../utils';
+import { BodyInfo } from '../../../models';
+import { BMR, BSA, TDEE } from '../../../utils';
 
-type OptionEntity = {
+export type OptionEntity = {
   text: string;
   desc?: string;
-  fn?: (...args: (number & Date & Gender)[]) => string | string[];
+  fn: (bodyInfo: BodyInfo) => string | string[];
 };
 
 const BRMOptions: OptionEntity[] = [

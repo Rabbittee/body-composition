@@ -1,9 +1,10 @@
 import Decimal from 'decimal.js';
 import { yearfrac } from 'formula';
-import { Gender } from '../../models';
+import { BodyInfo, Gender } from '../../models';
 
 // =round(1279 + 18.3 * weight + 2.3 * yearfrac(C2,today()) - if(gender="女",338,0),0)
-export function calRedman(gender: Gender, weight: number, birth: Date) {
+export function calRedman(bodyInfo: BodyInfo) {
+  const { gender, weight, birth } = bodyInfo;
   const temp = new Decimal(weight)
     .times(18.3)
     .add(1279)

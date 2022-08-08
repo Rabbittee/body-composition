@@ -1,2 +1,2 @@
-export * from './FormInputs';
+export * from './BodyInfo';
 export * from './Gender';

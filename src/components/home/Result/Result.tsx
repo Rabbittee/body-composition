@@ -5,11 +5,11 @@ function Result() {
   return (
     <div>
       <div className="mt-8 grid grid-cols-3 gap-4">
-        <ResultItem type={ResultItemType.BMR} value={1760} />
+        <ResultItem type={ResultItemType.BMR} />
 
-        <ResultItem type={ResultItemType.TDEE} value={4059} />
+        <ResultItem type={ResultItemType.TDEE} />
 
-        <ResultItem type={ResultItemType.BSA} value={2.03} />
+        <ResultItem type={ResultItemType.BSA} />
       </div>
     </div>
   );
