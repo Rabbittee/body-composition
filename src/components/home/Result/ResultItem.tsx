@@ -1,4 +1,5 @@
 import { InformationCircleIcon } from '@heroicons/react/solid';
+import clsx from 'clsx';
 import { useEffect, useState } from 'react';
 import { useStore } from '../../../store';
 import { ITEM_TYPE, OptionEntity, ResultItemType } from './Options';
@@ -41,7 +42,14 @@ function ResultItem({ type }: Props) {
         <InformationCircleIcon className="h-4 w-4 text-teal" />
       </div>
 
-      <div className="text-9xl font-black text-teal">{Array.isArray(value) ? value[0] : value}</div>
+      <div
+        className={clsx(
+          'font-black text-teal',
+          value.length > 7 ? 'text-5xl leading-snug' : 'text-9xl'
+        )}
+      >
+        {Array.isArray(value) ? value[0] : value}
+      </div>
     </div>
   );
 }

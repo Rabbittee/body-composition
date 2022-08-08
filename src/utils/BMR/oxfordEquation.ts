@@ -9,6 +9,11 @@ export const calOxfordEquation = (bodyInfo: BodyInfo) => {
 
   try {
     const age = new Decimal(yearfrac(birth, new Date())).round();
+
+    if (age.lessThan(18) || age.greaterThan(80)) {
+      return '僅支援18歲至80歲之年齡';
+    }
+
     const index = age.minus(3).toNumber();
 
     if (gender === Gender.Male) {

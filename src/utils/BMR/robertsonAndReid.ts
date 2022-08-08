@@ -15,6 +15,12 @@ export const calRobertsonAndReid = (bodyInfo: BodyInfo) => {
 
   try {
     const age = new Decimal(yearfrac(birth, new Date())).round();
+    const maxAge = gender === Gender.Male ? 80 : 75;
+
+    if (age.lessThan(3) || age.greaterThan(maxAge)) {
+      return `僅支援3歲至${maxAge}歲之年齡`;
+    }
+
     const index = age.minus(3).toNumber();
 
     const base = new Decimal(0.007184)
