@@ -1,7 +1,7 @@
 function Header() {
   return (
     <>
-      <div className="text-xs text-blueGray-light">
+      <div className="text-blueGray-light">
         Source:
         <a
           href="https://www.facebook.com/100050186212776/posts/pfbid08kibVooUgdRwAn2LjWSRjzVJ5wzvjYncGqP2XvvR8vC9SYPqqH86HZ3uTZGqesy2l/"
