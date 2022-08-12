@@ -1,4 +1,4 @@
-import { InputFieldType } from './InputFieldType';
+import { InputFieldType } from '../InputFieldType';
 import { InputFieldBase } from './InputFieldBase';
 
 function WeightField() {

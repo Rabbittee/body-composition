@@ -1,5 +1,5 @@
 import { useFormContext } from 'react-hook-form';
-import { InputFieldType, INPUT_TYPE } from './InputFieldType';
+import { InputFieldType, INPUT_TYPE } from '../InputFieldType';
 
 type Props = {
   type: InputFieldType;

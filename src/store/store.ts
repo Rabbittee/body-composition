@@ -1,6 +1,6 @@
 import create, { GetState } from 'zustand';
 import { devtools, NamedSet } from 'zustand/middleware';
-import { BodyInfo, Gender } from '../models';
+import { Activity, BodyInfo, Gender, Pregnancy } from '../models';
 
 type User = {
   id: string;
@@ -13,6 +13,9 @@ export const defaultBodyInfo: BodyInfo = {
   height: 175,
   weight: 70,
   bodyFat: 20,
+  waist: 79,
+  activity: Activity.Moderate,
+  pregnancy: Pregnancy.None,
 };
 
 export type AppState = {
