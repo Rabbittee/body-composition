@@ -1,2 +1,2 @@
-export * from './home/InputField';
+export * from './home/FormField';
 export * from './layouts';

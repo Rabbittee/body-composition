@@ -1,11 +1,20 @@
 import { BodyInfo } from '../../../models';
-import { BMR, BSA, TDEE } from '../../../utils';
+import { BMR, BodyMass, BSA, Calories, TDEE } from '../../../utils';
 
 export type OptionEntity = {
   text: string;
   desc?: string;
   fn: (bodyInfo: BodyInfo) => string | string[];
 };
+
+const DailyCaloriesOptions: OptionEntity[] = [
+  { text: '每日熱量攝取建議	', desc: '根據活動量及最低BMR計算', fn: Calories.calDailyCalories },
+];
+
+const BodyMassOptions: OptionEntity[] = [
+  { text: 'BMI', fn: BodyMass.calBMI },
+  { text: '腰身高比', desc: '根據活動量及最低BMR計算', fn: BodyMass.calWHtR },
+];
 
 const BRMOptions: OptionEntity[] = [
   { text: 'Robertson and Reid', desc: '適用於肥胖者', fn: BMR.calRobertsonAndReid },
@@ -29,17 +38,28 @@ const BSAOptions: OptionEntity[] = [
 ];
 
 export enum ResultItemType {
+  DailyCalories,
+  BodyMass,
   BMR,
   TDEE,
   BSA,
 }
 
-type OptionType = {
+export type OptionType = {
   title: string;
   options: OptionEntity[];
+  expanded?: boolean;
 };
 
-export const ITEM_TYPE: { [key in ResultItemType]: OptionType } = {
+type ResultOption = Record<ResultItemType, OptionType>;
+
+export const ITEM_TYPE: ResultOption = {
+  [ResultItemType.DailyCalories]: {
+    title: '',
+    options: DailyCaloriesOptions,
+    expanded: true,
+  },
+  [ResultItemType.BodyMass]: { title: '', options: BodyMassOptions, expanded: true },
   [ResultItemType.BMR]: { title: '基礎代謝率', options: BRMOptions },
   [ResultItemType.TDEE]: { title: 'TDEE', options: TDEEOptions },
   [ResultItemType.BSA]: { title: '體表面積', options: BSAOptions },
