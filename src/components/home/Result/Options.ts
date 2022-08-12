@@ -1,6 +1,5 @@
-import BodyMass from 'utils/BodyMass';
 import { BodyInfo } from '../../../models';
-import { BMR, BSA, TDEE } from '../../../utils';
+import { BMR, BodyMass, BSA, Calories, TDEE } from '../../../utils';
 
 export type OptionEntity = {
   text: string;
@@ -9,7 +8,7 @@ export type OptionEntity = {
 };
 
 const DailyCaloriesOptions: OptionEntity[] = [
-  { text: '每日熱量攝取建議	', desc: '根據活動量及最低BMR計算', fn: BMR.calRobertsonAndReid },
+  { text: '每日熱量攝取建議	', desc: '根據活動量及最低BMR計算', fn: Calories.calDailyCalories },
 ];
 
 const BodyMassOptions: OptionEntity[] = [
