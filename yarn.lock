@@ -1533,6 +1533,13 @@
     "@firebase/util" "1.6.3"
     tslib "^2.1.0"
 
+"@firebase/rules-unit-testing@^2.0.4":
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/@firebase/rules-unit-testing/-/rules-unit-testing-2.0.4.tgz#fe988970f1062df1257552623c598bdec5e30c2d"
+  integrity sha512-WZBCi3E5qpOjhXz9yYMsSeKQL8+bp5AlTRmTUfir4Wvm4plfNi04EyTfO/nqRCAIUEL8k6jDdNRx1IDuCyFBdg==
+  dependencies:
+    node-fetch "2.6.7"
+
 "@firebase/storage-compat@0.1.17":
   version "0.1.17"
   resolved "https://registry.yarnpkg.com/@firebase/storage-compat/-/storage-compat-0.1.17.tgz#da721071e006d066fb9b1cff69481bd59a02346b"
