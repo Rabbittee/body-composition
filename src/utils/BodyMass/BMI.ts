@@ -1,14 +1,14 @@
 import Decimal from 'decimal.js';
+import { BodyInfo } from 'models';
 
 /**
  * BMI
  *
  * BMI = weight / (height * height)
  *
- * @param height height[cm]
- * @param weight weight[kg]
  * @returns
  */
-export function calBMI(height: number, weight: number) {
+export function calBMI(bodyInfo: BodyInfo) {
+  const { height, weight } = bodyInfo;
   return new Decimal(weight).div(new Decimal(height).div(100).pow(2)).toFixed(2);
 }

@@ -1,3 +1,4 @@
+import BodyMass from 'utils/BodyMass';
 import { BodyInfo } from '../../../models';
 import { BMR, BSA, TDEE } from '../../../utils';
 
@@ -12,8 +13,8 @@ const DailyCaloriesOptions: OptionEntity[] = [
 ];
 
 const BodyMassOptions: OptionEntity[] = [
-  { text: 'BMI', fn: BMR.calRobertsonAndReid },
-  { text: '腰身高比', desc: '根據活動量及最低BMR計算', fn: BMR.calRobertsonAndReid },
+  { text: 'BMI', fn: BodyMass.calBMI },
+  { text: '腰身高比', desc: '根據活動量及最低BMR計算', fn: BodyMass.calWHtR },
 ];
 
 const BRMOptions: OptionEntity[] = [
