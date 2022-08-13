@@ -8,5 +8,5 @@ import { BodyInfo } from 'models';
  */
 export function calWHtR(bodyInfo: BodyInfo) {
   const { height, waist } = bodyInfo;
-  return new Decimal(height).div(waist).toFixed(2);
+  return new Decimal(waist).div(height).toFixed(2);
 }

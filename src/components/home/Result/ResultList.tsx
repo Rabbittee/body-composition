@@ -1,23 +1,13 @@
-import clsx from 'clsx';
-import { Tooltip } from 'components/common';
-import { useEffect, useState } from 'react';
-import { useStore } from '../../../store';
+import { useState } from 'react';
 import { OptionEntity, OptionType } from './Options';
+import { ResultText } from './ResultText';
 
 type Props = {
-  option: OptionType;
+  optionType: OptionType;
 };
 
-export function ResultList({ option: { title, options } }: Props) {
-  const bodyInfo = useStore((state) => state.bodyInfo);
-  const [value, setValue] = useState<string | string[]>('');
+export function ResultList({ optionType: { title, options } }: Props) {
   const [selected, setSelected] = useState<OptionEntity>(options[0]);
-
-  useEffect(() => {
-    if (!bodyInfo) return;
-    const result = selected.fn(bodyInfo);
-    setValue(result);
-  }, [bodyInfo, selected]);
 
   return (
     <div>
@@ -36,19 +26,7 @@ export function ResultList({ option: { title, options } }: Props) {
         ))}
       </select>
 
-      <div className="flex items-center space-x-1 text-3xl font-black text-teal">
-        {title}
-        <Tooltip text={selected.desc} />
-      </div>
-
-      <div
-        className={clsx(
-          'font-black text-teal',
-          value.length > 7 ? 'text-5xl leading-snug' : 'text-9xl'
-        )}
-      >
-        {Array.isArray(value) ? value[0] : value}
-      </div>
+      <ResultText option={selected} title={title} />
     </div>
   );
 }
