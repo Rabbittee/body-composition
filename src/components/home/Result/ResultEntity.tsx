@@ -9,7 +9,7 @@ export function ResultEntity({ optionType: { options } }: Props) {
   return (
     <>
       {options.map((option) => (
-        <ResultText key={option.text} option={option} />
+        <ResultText option={option} key={option.text} />
       ))}
     </>
   );

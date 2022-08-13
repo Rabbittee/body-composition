@@ -10,7 +10,7 @@ export function Result() {
     <div className=" -mx-12">
       <div className="carousel overflow-y-hidden">
         {list.map((type) => (
-          <div className="carousel-item pl-12 pr-8">
+          <div className="carousel-item pl-12 pr-8" key={ResultItemType[type]}>
             <div>
               <ResultItem type={ResultItemType[type]} />
             </div>
