@@ -6,7 +6,7 @@ type Props = {
   optionType: OptionType;
 };
 
-export function ResultList({ optionType: { options } }: Props) {
+export function ResultList({ optionType: { title, options } }: Props) {
   const [selected, setSelected] = useState<OptionEntity>(options[0]);
 
   return (
@@ -26,7 +26,7 @@ export function ResultList({ optionType: { options } }: Props) {
         ))}
       </select>
 
-      <ResultText option={selected} />
+      <ResultText option={selected} title={title} />
     </div>
   );
 }

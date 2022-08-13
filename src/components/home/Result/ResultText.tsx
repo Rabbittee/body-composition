@@ -5,9 +5,10 @@ import { OptionEntity } from './Options';
 
 type Props = {
   option: OptionEntity;
+  title?: string;
 };
 
-export function ResultText({ option }: Props) {
+export function ResultText({ option, title }: Props) {
   const bodyInfo = useStore((state) => state.bodyInfo);
   const { text, desc, fn } = option;
   const value = fn(bodyInfo);
@@ -15,7 +16,7 @@ export function ResultText({ option }: Props) {
   return (
     <div key={text}>
       <div className="flex items-center space-x-1 text-3xl font-black text-teal">
-        {text}
+        {title ?? text}
 
         <Tooltip text={desc} />
       </div>
