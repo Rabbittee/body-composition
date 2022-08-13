@@ -1,54 +1,47 @@
-import { CONFIG } from '../config';
-import { useEffect, useRef, useState } from 'react';
 import jwtDecode from 'jwt-decode';
+import { CONFIG } from '../config';
+import { useStore } from '../store';
+import { gapi } from 'gapi-script';
+import { GoogleOAuthProvider, GoogleLogin } from '@react-oauth/google';
 
-function Login() {
-  const [user, setUser] = useState({});
-  const sighnIn = useRef();
-  const googleID = window.google.accounts.id;
+function Information() {
+  const { user, setUser } = useStore();
 
-  const responseGoogle = (res) => {
-    const jwtToken = jwtDecode(res.credential);
-    setUser(jwtToken);
-    sighnIn.current.hidden = true;
+  const resGoogle = (res) => {
+    const decord = jwtDecode(res.credential);
+    setUser(decord);
   };
 
-  const sighnOut = () => {
-    sighnIn.current.hidden = false;
-    setUser({});
+  const signOut = () => {
+    if (gapi) {
+      const auth2 = gapi.auth2.getAuthInstance();
+      if (auth2 != null) {
+        auth2.then(() => {
+          auth2.signOut().then(() => {
+            auth2.disconnect();
+            setUser({});
+          });
+        });
+      }
+    }
   };
-
-  useEffect(() => {
-    googleID.initialize({
-      client_id: CONFIG.gcp.id,
-      callback: responseGoogle,
-    });
-
-    googleID.renderButton(sighnIn.current, { theme: 'outline', size: 'large' });
-  }, []);
-
-  useEffect(() => {
-    if (!Object.keys(user).length) googleID.prompt();
-  }, [user]);
 
   return (
     <>
-      <div className="sighnIn" ref={sighnIn} />
-      {Object.keys(user).length !== 0 && (
-        <button
-          className="rounded border border-blue-500 bg-transparent py-2 px-4 font-semibold text-blue-700 hover:border-transparent hover:bg-blue-500 hover:text-white"
-          onClick={sighnOut}
-        >
-          Sighn Out
-        </button>
-      )}
-      {user && (
-        <div>
-          <img src={user.picture} alt="user name" />
-          <h3>{user.name}</h3>
-        </div>
+      {user ? (
+        <button onClick={signOut}>Welcome, {user.name} | Sign Out</button>
+      ) : (
+        <GoogleLogin onSuccess={resGoogle} onError={resGoogle} className="g-signin2" />
       )}
     </>
+  );
+}
+
+function Login() {
+  return (
+    <GoogleOAuthProvider clientId={CONFIG.gcp.id}>
+      <Information />
+    </GoogleOAuthProvider>
   );
 }
 

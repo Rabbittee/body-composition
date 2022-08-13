@@ -6,11 +6,13 @@
   "dependencies": {
     "@heroicons/react": "^1.0.6",
     "@hookform/resolvers": "^2.9.7",
+    "@react-oauth/google": "^0.2.6",
     "clsx": "^1.2.1",
     "daisyui": "^2.20.0",
     "decimal.js": "^10.3.1",
     "formula": "^3.18.0",
     "fp-ts": "^2.12.2",
+    "gapi-script": "^1.2.0",
     "jwt-decode": "^3.1.2",
     "ramda": "^0.28.0",
     "react": "^18.2.0",
