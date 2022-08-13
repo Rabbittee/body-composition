@@ -6,6 +6,10 @@ on:
 
   workflow_dispatch:
 
+env:
+  REACT_APP_GCP_ID: ${{ secrets.REACT_APP_GCP_ID }}
+  REACT_APP_GCP_SECRET: ${{ secrets.REACT_APP_GCP_SECRET }}
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -21,9 +25,6 @@ jobs:
         run: |
           yarn
           yarn build
-        env:
-          REACT_APP_GCP_ID: ${{ secrets.REACT_APP_GCP_ID }}
-          REACT_APP_GCP_SECRET: ${{ secrets.REACT_APP_GCP_SECRET }}
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.2.0
