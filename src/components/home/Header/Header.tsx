@@ -19,7 +19,7 @@ export function Header() {
         <Login />
       </div>
 
-      <div className="text-blueGray">計算你的基礎代謝率</div>
+      <div className="text-blueGray">計算你的健康指標</div>
     </>
   );
 }
