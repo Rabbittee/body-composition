@@ -18,7 +18,7 @@ const schema = yup.object().shape({
   pregnancy: yup.mixed<Pregnancy>().oneOf(Object.values(Pregnancy)).required(),
 });
 
-function Form() {
+export function Form() {
   const methods = useForm<BodyInfo>({
     defaultValues: defaultBodyInfo,
     resolver: yupResolver(schema),
@@ -57,5 +57,3 @@ function Form() {
     </FormProvider>
   );
 }
-
-export default Form;

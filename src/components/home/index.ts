@@ -1,3 +1,4 @@
+export * from './FormField';
+export * from './Form';
+export * from './Header';
 export * from './Result';
-export { default as Form } from './Form';
-export { default as Header } from './Header';

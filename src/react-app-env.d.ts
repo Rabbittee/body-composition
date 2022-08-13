@@ -1,5 +1,5 @@
 /// <reference types="react-scripts" />
 
-interface Window {
-  google: typeof import('google-one-tap');
-}
+// interface Window {
+//   google: typeof import('google-one-tap');
+// }
