@@ -1,4 +1,4 @@
-import { Form, Header, Result } from '../../components/home';
+import { Form, Header, Result } from 'components/home';
 
 function Home() {
   return (

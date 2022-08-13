@@ -1,11 +1,7 @@
+import { User } from 'models/GoogleUser';
 import create, { GetState } from 'zustand';
 import { devtools, NamedSet } from 'zustand/middleware';
 import { Activity, BodyInfo, Gender, Pregnancy } from '../models';
-
-type User = {
-  id: string;
-  name: string;
-};
 
 export const defaultBodyInfo: BodyInfo = {
   birth: '2001-01-01',
@@ -20,25 +16,26 @@ export const defaultBodyInfo: BodyInfo = {
 
 export type AppState = {
   bodyInfo: BodyInfo;
-  user?: User;
+  user: User | null;
 };
 
 type AppAction = {
   setBodyInfo: (val: BodyInfo) => void;
-  setUser: (user: User) => void;
+  setUser: (user: User | null) => void;
 };
 
 type StoreType = AppState & AppAction;
 
 const initialState: AppState = {
   bodyInfo: defaultBodyInfo,
+  user: null,
 };
 
 const store = (set: NamedSet<StoreType>, get: GetState<StoreType>) => ({
   ...initialState,
   setBodyInfo: (bodyInfo: BodyInfo) => set(() => ({ bodyInfo }), false, 'setBodyInfo'),
 
-  setUser: (user: User) => set(() => ({ user }), false, 'setUser'),
+  setUser: (user: User | null) => set(() => ({ user }), false, 'setUser'),
 });
 
 export const useStore =

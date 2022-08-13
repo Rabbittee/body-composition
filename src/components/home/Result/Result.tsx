@@ -1,7 +1,7 @@
 import { ResultItemType } from './Options';
 import ResultItem from './ResultItem';
 
-function Result() {
+export function Result() {
   return (
     <div>
       <div className="mt-8 grid grid-cols-3 gap-4">
@@ -18,5 +18,3 @@ function Result() {
     </div>
   );
 }
-
-export default Result;
