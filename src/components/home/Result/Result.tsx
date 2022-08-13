@@ -7,7 +7,7 @@ export function Result() {
   const list = types.filter(isEnum);
 
   return (
-    <div className=" -mx-12">
+    <div className="-mx-12">
       <div className="carousel overflow-y-hidden">
         {list.map((type) => (
           <div className="carousel-item pl-12 pr-8" key={ResultItemType[type]}>

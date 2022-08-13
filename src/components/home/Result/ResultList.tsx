@@ -12,7 +12,7 @@ export function ResultList({ optionType: { title, options } }: Props) {
   return (
     <div>
       <select
-        className="select select-ghost mb-2 text-blueGray focus:outline-0"
+        className="select select-ghost min-h-8 mb-2 h-8 border-teal/20 text-blueGray focus:outline-0"
         value={selected.text}
         onChange={(e) => {
           const option = options.find(({ text }) => text === e.target.value) as OptionEntity;
