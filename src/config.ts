@@ -4,3 +4,4 @@ export const CONFIG = {
     secret: process.env.REACT_APP_GCP_SECRET as string,
   },
 };
+console.log('🚀 ~ CONFIG', CONFIG.gcp);
