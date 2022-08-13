@@ -1,5 +1,5 @@
 import { ResultItemType } from './Options';
-import ResultItem from './ResultItem';
+import { ResultItem } from './ResultItem';
 
 export function Result() {
   return (

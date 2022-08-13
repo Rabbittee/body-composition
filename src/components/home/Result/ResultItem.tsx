@@ -6,10 +6,8 @@ type Props = {
   type: ResultItemType;
 };
 
-function ResultItem({ type }: Props) {
+export function ResultItem({ type }: Props) {
   const option = ITEM_TYPE[type];
 
   return <>{option.expanded ? <ResultEntity option={option} /> : <ResultList option={option} />}</>;
 }
-
-export default ResultItem;

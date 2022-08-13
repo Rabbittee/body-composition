@@ -1,10 +1,10 @@
+import { useEffect } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
+import { Activity, BodyInfo, Gender, Pregnancy } from 'models';
+import { defaultBodyInfo, useStore } from 'store';
 import { InputField, SelectField } from '..';
-import { Activity, BodyInfo, Gender, Pregnancy } from '../../models';
-import { defaultBodyInfo, useStore } from '../../store';
-import { useEffect } from 'react';
 
 //: yup.SchemaOf<BodyInfo>
 const schema = yup.object().shape({
@@ -18,7 +18,7 @@ const schema = yup.object().shape({
   pregnancy: yup.mixed<Pregnancy>().oneOf(Object.values(Pregnancy)).required(),
 });
 
-export function Form() {
+export function InputForm() {
   const methods = useForm<BodyInfo>({
     defaultValues: defaultBodyInfo,
     resolver: yupResolver(schema),

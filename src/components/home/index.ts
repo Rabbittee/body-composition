@@ -1,4 +1,4 @@
 export * from './FormField';
-export * from './Form';
 export * from './Header';
+export * from './InputForm';
 export * from './Result';
