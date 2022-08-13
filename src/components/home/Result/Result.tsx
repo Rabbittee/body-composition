@@ -2,18 +2,20 @@ import { ResultItemType } from './Options';
 import { ResultItem } from './ResultItem';
 
 export function Result() {
+  const isEnum = (type: number | string) => isNaN(Number(type));
+  const types = Object.keys(ResultItemType) as Array<keyof typeof ResultItemType>;
+  const list = types.filter(isEnum);
+
   return (
-    <div>
-      <div className="mt-8 grid grid-cols-3 gap-4">
-        <ResultItem type={ResultItemType.DailyCalories} />
-
-        <ResultItem type={ResultItemType.BodyMass} />
-
-        <ResultItem type={ResultItemType.BMR} />
-
-        <ResultItem type={ResultItemType.TDEE} />
-
-        <ResultItem type={ResultItemType.BSA} />
+    <div className=" -mx-12">
+      <div className="carousel overflow-y-hidden">
+        {list.map((type) => (
+          <div className="carousel-item pl-12 pr-8">
+            <div>
+              <ResultItem type={ResultItemType[type]} />
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
