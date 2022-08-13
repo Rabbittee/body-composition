@@ -5,7 +5,7 @@
 感謝王介立醫師辛苦整理出健康計算公式，爲了方便使用者使用，在知會過王醫師並取得了同意之後，於是有了此線上版計算機的產生。
 
 
-1. [王介立醫師臉書](https://www.facebook.com/100050186212776/posts/pfbid08kibVooUgdRwAn2LjWSRjzVJ5wzvjYncGqP2XvvR8vC9SYPqqH86HZ3uTZGqesy2l/)
+1. [食研社](https://www.facebook.com/groups/1028435774570219/posts/1229546761125785/)
 2. [王介立醫師健康計算表](https://docs.google.com/spreadsheets/d/1GLaLw3TQuzm4O5WP2-sJW6uqr2tHzwVbsWAbgKxBs58/edit#gid=1188828647)
 
 
