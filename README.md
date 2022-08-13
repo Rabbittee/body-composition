@@ -2,7 +2,7 @@
 基礎代謝率、TDEE、體表面積計算機。
 ## 資料來源
 
-感謝王介立醫師辛苦整理出健康計算公式，爲了方便使用者使用，於是就有了此計算機的產生。
+感謝王介立醫師辛苦整理出健康計算公式，爲了方便使用者使用，在知會過王醫師並取得了同意之後，於是有了此線上版計算機的產生。
 
 
 1. [王介立醫師臉書](https://www.facebook.com/100050186212776/posts/pfbid08kibVooUgdRwAn2LjWSRjzVJ5wzvjYncGqP2XvvR8vC9SYPqqH86HZ3uTZGqesy2l/)
