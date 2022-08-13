@@ -1,11 +1,4 @@
 import { Activity, Gender, Pregnancy } from 'models';
-import { ChangeEventHandler } from 'react';
-import { genList } from 'utils/EnumHelper';
-
-export type InputFieldProps = {
-  value?: string;
-  onChange?: ChangeEventHandler<HTMLSelectElement>;
-};
 
 export enum SelectFieldType {
   Gender,
@@ -13,28 +6,30 @@ export enum SelectFieldType {
   Pregnancy,
 }
 
-type Key = keyof typeof Gender | keyof typeof Activity | keyof typeof Pregnancy;
-
 type FieldTypeMap = {
   [key in SelectFieldType]: {
     name: string;
     text: string;
-    source: Array<{ key: Key; value: string }>;
+    sourceType: typeof Gender | typeof Activity | typeof Pregnancy;
     defaultIndex?: number;
   };
 };
 
 export const SELECT_TYPE: FieldTypeMap = {
-  [SelectFieldType.Gender]: { name: 'gender', text: '性別', source: genList(Gender) },
+  [SelectFieldType.Gender]: {
+    name: 'gender',
+    text: '性別',
+    sourceType: Gender,
+  },
   [SelectFieldType.Activity]: {
     name: 'activity',
     text: '活動量',
-    source: genList(Activity),
+    sourceType: Activity,
     defaultIndex: 2,
   },
   [SelectFieldType.Pregnancy]: {
     name: 'pregnancy',
     text: '懷孕哺乳狀態',
-    source: genList(Pregnancy),
+    sourceType: Pregnancy,
   },
 };
