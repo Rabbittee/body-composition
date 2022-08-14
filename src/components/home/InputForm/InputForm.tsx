@@ -31,6 +31,9 @@ export function InputForm() {
 
   function onSubmit(data: BodyInfo) {
     setBodyInfo(data);
+    const history = JSON.parse(localStorage.getItem('BodyInfo') as string)
+    const insertData = history ? [data, ...history] : [{...data}]
+    localStorage.setItem('BodyInfo', JSON.stringify(insertData)) 
   }
 
   useEffect(() => {
