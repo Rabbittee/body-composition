@@ -27,7 +27,7 @@ export function ResultValue({ option, title }: Props) {
           value.length > 7 ? 'text-2xl leading-snug md:text-5xl' : 'text-4xl md:text-7xl'
         )}
       >
-        {Array.isArray(value) ? value[0] : value}
+        {value}
       </div>
     </div>
   );
