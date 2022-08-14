@@ -19,9 +19,11 @@ enum Estimate {
 const calRobertsonAndReid = (estimate: Estimate) => (bodyInfo: BodyInfo) => {
   const { birth, height, weight, gender } = bodyInfo;
 
+  const isMale = gender === Gender.Male;
+
   try {
     const age = new Decimal(yearfrac(birth, new Date())).round();
-    const maxAge = gender === Gender.Male ? 80 : 75;
+    const maxAge = isMale ? 80 : 75;
 
     if (age.lessThan(3) || age.greaterThan(maxAge)) {
       return `僅支援3歲至${maxAge}歲之年齡`;
@@ -34,12 +36,12 @@ const calRobertsonAndReid = (estimate: Estimate) => (bodyInfo: BodyInfo) => {
       .times(new Decimal(weight).toPower(0.425))
       .times(24);
 
-    let parameter = null;
-    if (gender === Gender.Male) {
-      parameter = RobertsonReidParameters[`Male_${estimate}`][index];
-    } else {
-      parameter = RobertsonReidParameters[`Female_${estimate}`][index];
-    }
+    const key: keyof typeof RobertsonReidParameters = isMale
+      ? `Male_${estimate}`
+      : `Female_${estimate}`;
+
+    const parameter = RobertsonReidParameters[key][index];
+
     return base.times(parameter).round().toString();
   } catch {
     return '-';
