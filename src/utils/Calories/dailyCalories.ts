@@ -29,13 +29,11 @@ export function calDailyCalories(bodyInfo: BodyInfo) {
   const ratio = CaloriesParameters[gender][activity];
 
   try {
-    const _BMR = Object.values(BMR)
+    const BMRs = Object.values(BMR)
       .filter((func) => !skipFunc.includes(func))
       .map((func) => func(bodyInfo));
 
-    const min = Math.min(
-      ..._BMR.map((val) => (typeof val === 'string' ? Number(val) : Number(val[1])))
-    );
+    const min = Math.min(...BMRs.map(Number));
 
     return new Decimal(min).times(ratio).round().toString();
   } catch {
