@@ -1,10 +1,12 @@
 import  { calKatchMcArdle } from '../katchMcArdle';
 import  { testCase }  from './testCase';
 
-test.each(testCase)(
-  'test calKatchMcArdle',
-  ({expected, ...bodyInfo}) => {
-    expect(calKatchMcArdle(bodyInfo))
-      .toBe(expected['calKatchMcArdle']);
-  }
-);
+describe('BMR - calKatchMcArdle', () => {
+  test.concurrent.each(testCase)(
+    'case index($#)',
+    async ({expected, ...bodyInfo}) => {
+      expect(calKatchMcArdle(bodyInfo))
+        .toBe(expected['calKatchMcArdle']);
+    }
+  );
+})
