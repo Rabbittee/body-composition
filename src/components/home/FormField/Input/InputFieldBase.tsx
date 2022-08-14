@@ -21,7 +21,7 @@ export function InputFieldBase({ type, defaultValue }: Props) {
       <input
         {...register(name)}
         type={fieldType}
-        className="input input-bordered flex-1 text-blueGray"
+        className="input input-bordered w-full appearance-none text-blueGray"
         placeholder={placeholder}
         defaultValue={defaultValue}
       />
