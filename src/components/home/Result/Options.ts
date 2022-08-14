@@ -38,11 +38,11 @@ const BSAOptions: OptionEntity[] = [
 ];
 
 export enum ResultItemType {
-  DailyCalories,
-  BodyMass,
-  BMR,
-  TDEE,
-  BSA,
+  DailyCalories = 'DailyCalories',
+  BodyMass = 'BodyMass',
+  BMR = 'BMR',
+  TDEE = 'TDEE',
+  BSA = 'BSA',
 }
 
 export type OptionType = {

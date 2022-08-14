@@ -39,7 +39,10 @@ export function InputForm() {
 
   return (
     <FormProvider {...methods}>
-      <form className="grid grid-cols-3 grid-rows-3 gap-4" onSubmit={handleSubmit(onSubmit)}>
+      <form
+        className="grid grid-cols-2 grid-rows-5 gap-2 md:grid-cols-3 md:grid-rows-3"
+        onSubmit={handleSubmit(onSubmit)}
+      >
         <SelectField.Gender />
         <InputField.Height />
         <InputField.Birth />
@@ -50,7 +53,7 @@ export function InputForm() {
         <SelectField.Activity />
         <SelectField.Pregnancy disabled={gender === Gender.Male} />
 
-        <button type="submit" className="btn mt-auto bg-teal">
+        <button type="submit" className="btn col-span-2 mt-2 bg-teal md:col-span-1 md:mt-auto">
           計算
         </button>
       </form>
