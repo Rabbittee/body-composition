@@ -3,6 +3,7 @@ import { FormProvider, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useLocalStorage } from 'react-use';
 import * as yup from 'yup';
+import { CONFIG } from 'config';
 import { Activity, BodyInfo, Gender, Pregnancy } from 'models';
 import { defaultBodyInfo, useStore } from 'store';
 import { InputField, SelectField } from '..';
@@ -19,7 +20,7 @@ const schema: yup.SchemaOf<BodyInfo> = yup.object().shape({
 });
 
 export function InputForm() {
-  const [localStorage, setLocalStorage] = useLocalStorage<BodyInfo>('BodyInfo');
+  const [localStorage, setLocalStorage] = useLocalStorage<BodyInfo>(CONFIG.storageKey);
 
   const methods = useForm<BodyInfo>({
     defaultValues: localStorage ? localStorage : defaultBodyInfo,
@@ -33,7 +34,7 @@ export function InputForm() {
   const setBodyInfo = useStore((state) => state.setBodyInfo);
 
   function onSubmit(data: BodyInfo) {
-    // FIXME: update defaultValue
+    // FIXME: update defaultBodyInfo
     // setBodyInfo(data);
     setLocalStorage(data);
   }
