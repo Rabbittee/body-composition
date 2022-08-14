@@ -1,5 +1,6 @@
 import clsx from 'clsx';
 import { Tooltip } from 'components/common';
+import { useMemo } from 'react';
 import { useStore } from 'store';
 import { OptionEntity } from './Options';
 
@@ -11,7 +12,14 @@ type Props = {
 export function ResultValue({ option, title }: Props) {
   const bodyInfo = useStore((state) => state.bodyInfo);
   const { text, desc, fn } = option;
-  const value = fn(bodyInfo);
+
+  const value = useMemo(() => {
+    try {
+      return fn(bodyInfo);
+    } catch {
+      return '-';
+    }
+  }, [bodyInfo, fn]);
 
   return (
     <div>

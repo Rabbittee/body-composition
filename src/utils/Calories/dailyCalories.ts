@@ -1,5 +1,6 @@
 import Decimal from 'decimal.js';
 import { BodyInfo, Activity, Gender } from 'models';
+import { calRobertsonAndReidHigh, calRobertsonAndReidLow } from 'utils/BMR';
 
 import { BMR } from '../';
 
@@ -20,13 +21,17 @@ export const CaloriesParameters = {
   },
 };
 
+const skipFunc = [calRobertsonAndReidHigh, calRobertsonAndReidLow];
+
 //round(min(0.007184*(height*0.725)*(weight*0.425)*24*(vlookup(BMI(age, gender))*(actionvalue(actionType, gender)))
 export function calDailyCalories(bodyInfo: BodyInfo) {
   const { gender, activity } = bodyInfo;
   const ratio = CaloriesParameters[gender][activity];
 
   try {
-    const _BMR = Object.values(BMR).map((func) => func(bodyInfo));
+    const _BMR = Object.values(BMR)
+      .filter((func) => !skipFunc.includes(func))
+      .map((func) => func(bodyInfo));
 
     const min = Math.min(
       ..._BMR.map((val) => (typeof val === 'string' ? Number(val) : Number(val[1])))

@@ -4,7 +4,7 @@ import { BMR, BodyMass, BSA, Calories, TDEE } from '../../../utils';
 export type OptionEntity = {
   text: string;
   desc?: string;
-  fn: (bodyInfo: BodyInfo) => string | string[];
+  fn: (bodyInfo: BodyInfo) => string;
 };
 
 const DailyCaloriesOptions: OptionEntity[] = [
