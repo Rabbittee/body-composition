@@ -1,13 +1,14 @@
 import { useEffect } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
+import { useLocalStorage } from 'react-use';
 import * as yup from 'yup';
+import { CONFIG } from 'config';
 import { Activity, BodyInfo, Gender, Pregnancy } from 'models';
 import { defaultBodyInfo, useStore } from 'store';
 import { InputField, SelectField } from '..';
 
-//: yup.SchemaOf<BodyInfo>
-const schema = yup.object().shape({
+const schema: yup.SchemaOf<BodyInfo> = yup.object().shape({
   birth: yup.string().required(),
   gender: yup.mixed<Gender>().oneOf(Object.values(Gender)).required(),
   height: yup.number().required(),
@@ -19,10 +20,13 @@ const schema = yup.object().shape({
 });
 
 export function InputForm() {
+  const [localStorage, setLocalStorage] = useLocalStorage<BodyInfo>(CONFIG.storageKey);
+
   const methods = useForm<BodyInfo>({
-    defaultValues: defaultBodyInfo,
+    defaultValues: localStorage ? localStorage : defaultBodyInfo,
     resolver: yupResolver(schema),
   });
+
   const { handleSubmit, watch, setValue } = methods;
 
   const gender = watch('gender');
@@ -30,8 +34,14 @@ export function InputForm() {
   const setBodyInfo = useStore((state) => state.setBodyInfo);
 
   function onSubmit(data: BodyInfo) {
-    setBodyInfo(data);
+    // FIXME: update defaultBodyInfo
+    // setBodyInfo(data);
+    setLocalStorage(data);
   }
+
+  useEffect(() => {
+    localStorage && setBodyInfo(localStorage);
+  }, [localStorage, setBodyInfo]);
 
   useEffect(() => {
     if (gender === Gender.Male) setValue('pregnancy', Pregnancy.None);
