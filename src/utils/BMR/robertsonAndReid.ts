@@ -10,12 +10,20 @@ import { RobertsonReidParameters } from './parameters';
 //     "無法計算"
 // )
 
-export const calRobertsonAndReid = (bodyInfo: BodyInfo) => {
+enum Estimate {
+  Low = 'Low',
+  Mean = 'Mean',
+  High = 'High',
+}
+
+const calRobertsonAndReid = (estimate: Estimate) => (bodyInfo: BodyInfo) => {
   const { birth, height, weight, gender } = bodyInfo;
+
+  const isMale = gender === Gender.Male;
 
   try {
     const age = new Decimal(yearfrac(birth, new Date())).round();
-    const maxAge = gender === Gender.Male ? 80 : 75;
+    const maxAge = isMale ? 80 : 75;
 
     if (age.lessThan(3) || age.greaterThan(maxAge)) {
       return `僅支援3歲至${maxAge}歲之年齡`;
@@ -28,19 +36,18 @@ export const calRobertsonAndReid = (bodyInfo: BodyInfo) => {
       .times(new Decimal(weight).toPower(0.425))
       .times(24);
 
-    if (gender === Gender.Male) {
-      return [
-        base.times(RobertsonReidParameters.Male_Low[index]),
-        base.times(RobertsonReidParameters.Male_Mean[index]),
-        base.times(RobertsonReidParameters.Male_High[index]),
-      ].map((value) => value.round().toString());
-    }
-    return [
-      base.times(RobertsonReidParameters.Female_Low[index]),
-      base.times(RobertsonReidParameters.Female_Mean[index]),
-      base.times(RobertsonReidParameters.Female_High[index]),
-    ].map((value) => value.round().toString());
+    const key: keyof typeof RobertsonReidParameters = isMale
+      ? `Male_${estimate}`
+      : `Female_${estimate}`;
+
+    const parameter = RobertsonReidParameters[key][index];
+
+    return base.times(parameter).round().toString();
   } catch {
     return '-';
   }
 };
+
+export const calRobertsonAndReidLow = calRobertsonAndReid(Estimate.Low);
+export const calRobertsonAndReidMean = calRobertsonAndReid(Estimate.Mean);
+export const calRobertsonAndReidHigh = calRobertsonAndReid(Estimate.High);
