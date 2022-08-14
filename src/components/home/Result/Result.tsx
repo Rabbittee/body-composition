@@ -1,22 +1,15 @@
+import { genList } from 'utils/EnumHelper';
 import { ResultItemType } from './Options';
 import { ResultItem } from './ResultItem';
 
 export function Result() {
-  const isEnum = (type: number | string) => isNaN(Number(type));
-  const types = Object.keys(ResultItemType) as Array<keyof typeof ResultItemType>;
-  const list = types.filter(isEnum);
+  const list = genList(ResultItemType);
 
   return (
-    <div className="-mx-12">
-      <div className="carousel overflow-y-hidden">
-        {list.map((type) => (
-          <div className="carousel-item pl-12 pr-8" key={ResultItemType[type]}>
-            <div>
-              <ResultItem type={ResultItemType[type]} />
-            </div>
-          </div>
-        ))}
-      </div>
+    <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
+      {list.map(({ key }) => (
+        <ResultItem key={key} type={ResultItemType[key]} />
+      ))}
     </div>
   );
 }

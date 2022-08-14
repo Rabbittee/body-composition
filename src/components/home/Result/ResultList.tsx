@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { OptionEntity, OptionType } from './Options';
-import { ResultText } from './ResultText';
+import { ResultValue } from './ResultValue';
 
 type Props = {
   optionType: OptionType;
@@ -10,9 +10,9 @@ export function ResultList({ optionType: { title, options } }: Props) {
   const [selected, setSelected] = useState<OptionEntity>(options[0]);
 
   return (
-    <div>
+    <div className="flex flex-col-reverse md:flex-col">
       <select
-        className="select select-ghost min-h-8 mb-2 h-8 border-teal/20 text-blueGray focus:outline-0"
+        className="select select-ghost pl-1 text-xs text-blueGray focus:outline-0 md:mb-1 md:text-base"
         value={selected.text}
         onChange={(e) => {
           const option = options.find(({ text }) => text === e.target.value) as OptionEntity;
@@ -26,7 +26,7 @@ export function ResultList({ optionType: { title, options } }: Props) {
         ))}
       </select>
 
-      <ResultText option={selected} title={title} />
+      <ResultValue option={selected} title={title} />
     </div>
   );
 }

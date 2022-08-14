@@ -4,8 +4,8 @@ import GithubCorner from 'react-github-corner';
 function Main() {
   return (
     <>
-      <GithubCorner href="https://github.com/Rabbittee/body-composition" direction="left" />
-      <div className="m-12">
+      <GithubCorner href="https://github.com/Rabbittee/body-composition" />
+      <div className="m-8">
         <Outlet />
       </div>
     </>
