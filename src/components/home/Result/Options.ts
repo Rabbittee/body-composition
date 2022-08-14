@@ -17,7 +17,9 @@ const BodyMassOptions: OptionEntity[] = [
 ];
 
 const BRMOptions: OptionEntity[] = [
-  { text: 'Robertson and Reid', desc: '適用於肥胖者', fn: BMR.calRobertsonAndReid },
+  { text: 'Robertson and Reid(Mean)', desc: '適用於肥胖者', fn: BMR.calRobertsonAndReidMean },
+  { text: 'Robertson and Reid(Low)', desc: '適用於肥胖者', fn: BMR.calRobertsonAndReidLow },
+  { text: 'Robertson and Reid(High)', desc: '適用於肥胖者', fn: BMR.calRobertsonAndReidHigh },
   { text: 'Revised Harris-Benedict', fn: BMR.calRevisedHarrisBenedict },
   { text: 'Mifflin-St Jeor', fn: BMR.calMifflinStJeor },
   { text: 'Katch-McArdle', desc: '計算包含體脂', fn: BMR.calKatchMcArdle },

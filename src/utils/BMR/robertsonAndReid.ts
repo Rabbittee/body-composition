@@ -10,7 +10,13 @@ import { RobertsonReidParameters } from './parameters';
 //     "無法計算"
 // )
 
-export const calRobertsonAndReid = (bodyInfo: BodyInfo) => {
+enum Estimate {
+  Low = 'Low',
+  Mean = 'Mean',
+  High = 'High',
+}
+
+const calRobertsonAndReid = (estimate: Estimate) => (bodyInfo: BodyInfo) => {
   const { birth, height, weight, gender } = bodyInfo;
 
   try {
@@ -28,19 +34,18 @@ export const calRobertsonAndReid = (bodyInfo: BodyInfo) => {
       .times(new Decimal(weight).toPower(0.425))
       .times(24);
 
+    let parameter = null;
     if (gender === Gender.Male) {
-      return [
-        base.times(RobertsonReidParameters.Male_Low[index]),
-        base.times(RobertsonReidParameters.Male_Mean[index]),
-        base.times(RobertsonReidParameters.Male_High[index]),
-      ].map((value) => value.round().toString());
+      parameter = RobertsonReidParameters[`Male_${estimate}`][index];
+    } else {
+      parameter = RobertsonReidParameters[`Female_${estimate}`][index];
     }
-    return [
-      base.times(RobertsonReidParameters.Female_Low[index]),
-      base.times(RobertsonReidParameters.Female_Mean[index]),
-      base.times(RobertsonReidParameters.Female_High[index]),
-    ].map((value) => value.round().toString());
+    return base.times(parameter).round().toString();
   } catch {
     return '-';
   }
 };
+
+export const calRobertsonAndReidLow = calRobertsonAndReid(Estimate.Low);
+export const calRobertsonAndReidMean = calRobertsonAndReid(Estimate.Mean);
+export const calRobertsonAndReidHigh = calRobertsonAndReid(Estimate.High);
