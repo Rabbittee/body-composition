@@ -13,7 +13,11 @@ export const testCase = [
         calKatchMcArdle: '1061',
         calOxfordEquation: '1161',
         calRevisedHarrisBenedict: '1238',
-        calRobertsonAndReid: ['1053', '1231', '1410']
+        calRobertsonAndReid: {
+          Low: '1053',
+          Mean: '1231',
+          High: '1410'
+        }
     }
   },
   {
@@ -24,11 +28,15 @@ export const testCase = [
     bodyFat: 34,
     waist: 60,
     expected: {
-        calMifflinStJeor: '1097.75',
+        calMifflinStJeor: '1098',
         calKatchMcArdle: '940',
         calOxfordEquation: '1078',
         calRevisedHarrisBenedict: '1202',
-        calRobertsonAndReid: ['935', '1089', '1242']
+        calRobertsonAndReid: {
+          Low: '935',
+          Mean: '1089',
+          High: '1242'
+        }
     }
   },
   {
@@ -39,11 +47,15 @@ export const testCase = [
     bodyFat: 8,
     waist: 77,
     expected: {
-        calMifflinStJeor: '1466.5',
+        calMifflinStJeor: '1467',
         calKatchMcArdle: '1860',
         calOxfordEquation: '1327',
         calRevisedHarrisBenedict: '1461',
-        calRobertsonAndReid: ['1285', '1517', '1750']
+        calRobertsonAndReid: {
+          Low: '1285',
+          Mean: '1517',
+          High: '1750'
+        }
     }
   }
 ]
