@@ -22,7 +22,7 @@ const calRobertsonAndReid = (estimate: Estimate) => (bodyInfo: BodyInfo) => {
   const isMale = gender === Gender.Male;
 
   try {
-    const age = new Decimal(yearfrac(birth, new Date())).round();
+    const age = new Decimal(yearfrac(birth, new Date())).ceil();
     const maxAge = isMale ? 80 : 75;
 
     if (age.lessThan(3) || age.greaterThan(maxAge)) {

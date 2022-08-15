@@ -8,10 +8,10 @@ import { BodyInfo, Gender } from '../../models';
 // BMR = 10 x weight[kg] + 6.25 x height[cm] - 5 x age[y] - 161
 export function calMifflinStJeor(bodyInfo: BodyInfo) {
   const { height, weight, gender, birth } = bodyInfo;
-  return new Decimal(10)
-    .times(weight)
+
+  return new Decimal(new Decimal(10).times(weight))
     .plus(new Decimal(6.25).times(height))
-    .minus(new Decimal(yearfrac(birth, new Date())).round().times(5))
+    .minus(new Decimal(yearfrac(birth, new Date())).ceil().times(5))
     .add(gender === Gender.Male ? 5 : -161)
     .round()
     .toString();

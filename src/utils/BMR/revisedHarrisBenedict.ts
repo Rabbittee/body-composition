@@ -22,7 +22,7 @@ function calFemale(height: number, weight: number, age: Decimal) {
 
 export function calRevisedHarrisBenedict(bodyInfo: BodyInfo) {
   const { height, weight, gender, birth } = bodyInfo;
-  const age = new Decimal(yearfrac(birth, new Date())).round();
+  const age = new Decimal(yearfrac(birth, new Date())).ceil();
 
   if (gender === Gender.Male) {
     return calMale(height, weight, age).toString();
