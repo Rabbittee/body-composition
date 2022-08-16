@@ -1,18 +1,21 @@
+import { useTranslation } from 'react-i18next';
 import { CONFIG } from 'config';
 
 export function Header() {
+  const { t } = useTranslation();
+
   return (
     <div className="space-y-2">
       <div className="flex justify-between">
-        <div className="space-x-2 text-blueGray-light">
-          <span>Source:</span>
+        <div className="text-blueGray-light">
+          <span>{t('common.source')}</span>
           <a href={CONFIG.sourceLink} target="_blank" rel="noopener noreferrer" className="link">
-            王介立醫師
+            {t('meta.source')}
           </a>
         </div>
       </div>
 
-      <div className="text-blueGray">計算你的健康指標</div>
+      <div className="text-blueGray">{t('meta.slogan')}</div>
 
       <div className=" text-2xl font-black uppercase text-teal md:text-5xl">Body Composition</div>
     </div>
