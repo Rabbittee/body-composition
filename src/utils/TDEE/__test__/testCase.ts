@@ -1,6 +1,16 @@
-import { Gender, Activity, Pregnancy } from '../../../models';
+import { Gender, Activity, Pregnancy, BodyInfo } from '../../../models';
 
-const basicCase = {
+type Expected = {
+  expected: {
+    FAO: string;
+    redman: string;
+  };
+};
+
+type TestCase = BodyInfo & Expected;
+type TestCases = TestCase[];
+
+const basicCase: BodyInfo = {
   birth: '1980-07-22',
   gender: Gender.Male,
   height: 180,
@@ -11,7 +21,7 @@ const basicCase = {
   pregnancy: Pregnancy.None,
 };
 
-const testBasic = [
+const testBasic: TestCases = [
   {
     ...basicCase,
     expected: {
@@ -21,7 +31,7 @@ const testBasic = [
   },
 ];
 
-const testDate = [
+const testDate: TestCases = [
   {
     ...basicCase,
     birth: '1970-07-22',
@@ -48,7 +58,7 @@ const testDate = [
   },
 ];
 
-const testGender = [
+const testGender: TestCases = [
   {
     ...basicCase,
     gender: Gender.Female,
@@ -59,7 +69,7 @@ const testGender = [
   },
 ];
 
-const testWeight = [
+const testWeight: TestCases = [
   {
     ...basicCase,
     weight: 65,
@@ -86,7 +96,7 @@ const testWeight = [
   },
 ];
 
-const complexCase = [
+const complexCase: TestCases = [
   {
     ...basicCase,
     birth: '1990-07-22',
