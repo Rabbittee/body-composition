@@ -1,13 +1,12 @@
-import { Gender, Activity, Pregnancy, BodyInfo } from '../../../models';
+import { Gender, Activity, Pregnancy, BodyInfo, TestCaseBase } from '../../../models';
 
 type Expected = {
-  expected: {
-    FAO: string;
-    redman: string;
-  };
+  FAO: string;
+  redman: string;
 };
 
-type TestCase = BodyInfo & Expected;
+type TestCase = TestCaseBase<Expected>;
+
 type TestCases = TestCase[];
 
 const basicCase: BodyInfo = {
@@ -23,7 +22,7 @@ const basicCase: BodyInfo = {
 
 const testBasic: TestCases = [
   {
-    ...basicCase,
+    bodyInfo: basicCase,
     expected: {
       FAO: '3201',
       redman: '2565',
@@ -33,24 +32,30 @@ const testBasic: TestCases = [
 
 const testDate: TestCases = [
   {
-    ...basicCase,
-    birth: '1970-07-22',
+    bodyInfo: {
+      ...basicCase,
+      birth: '1970-07-22',
+    },
     expected: {
       FAO: '3201',
       redman: '2588',
     },
   },
   {
-    ...basicCase,
-    birth: '1980-07-22',
+    bodyInfo: {
+      ...basicCase,
+      birth: '1980-07-22',
+    },
     expected: {
       FAO: '3201',
       redman: '2565',
     },
   },
   {
-    ...basicCase,
-    birth: '1990-07-22',
+    bodyInfo: {
+      ...basicCase,
+      birth: '1990-07-22',
+    },
     expected: {
       FAO: '3201',
       redman: '2542',
@@ -60,8 +65,10 @@ const testDate: TestCases = [
 
 const testGender: TestCases = [
   {
-    ...basicCase,
-    gender: Gender.Female,
+    bodyInfo: {
+      ...basicCase,
+      gender: Gender.Female,
+    },
     expected: {
       FAO: '2590',
       redman: '2227',
@@ -71,24 +78,30 @@ const testGender: TestCases = [
 
 const testWeight: TestCases = [
   {
-    ...basicCase,
-    weight: 65,
+    bodyInfo: {
+      ...basicCase,
+      weight: 65,
+    },
     expected: {
       FAO: '3201',
       redman: '2565',
     },
   },
   {
-    ...basicCase,
-    weight: 80,
+    bodyInfo: {
+      ...basicCase,
+      weight: 80,
+    },
     expected: {
       FAO: '3725',
       redman: '2840',
     },
   },
   {
-    ...basicCase,
-    weight: 100,
+    bodyInfo: {
+      ...basicCase,
+      weight: 100,
+    },
     expected: {
       FAO: '4384',
       redman: '3206',
@@ -98,40 +111,48 @@ const testWeight: TestCases = [
 
 const complexCase: TestCases = [
   {
-    ...basicCase,
-    birth: '1990-07-22',
-    gender: Gender.Male,
-    weight: 65,
+    bodyInfo: {
+      ...basicCase,
+      birth: '1990-07-22',
+      gender: Gender.Male,
+      weight: 65,
+    },
     expected: {
       FAO: '3201',
       redman: '2542',
     },
   },
   {
-    ...basicCase,
-    birth: '2000-07-22',
-    gender: Gender.Male,
-    weight: 90,
+    bodyInfo: {
+      ...basicCase,
+      birth: '2000-07-22',
+      gender: Gender.Male,
+      weight: 90,
+    },
     expected: {
       FAO: '4059',
       redman: '2977',
     },
   },
   {
-    ...basicCase,
-    birth: '1990-07-22',
-    gender: Gender.Female,
-    weight: 65,
+    bodyInfo: {
+      ...basicCase,
+      birth: '1990-07-22',
+      gender: Gender.Female,
+      weight: 65,
+    },
     expected: {
       FAO: '2590',
       redman: '2204',
     },
   },
   {
-    ...basicCase,
-    birth: '2000-07-22',
-    gender: Gender.Female,
-    weight: 90,
+    bodyInfo: {
+      ...basicCase,
+      birth: '2000-07-22',
+      gender: Gender.Female,
+      weight: 90,
+    },
     expected: {
       FAO: '3285',
       redman: '2639',
