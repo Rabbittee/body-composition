@@ -1,3 +1,5 @@
 {
-  "cSpell.words": ["rabbittee"]
+  "cSpell.words": ["rabbittee"],
+  "i18n-ally.localesPaths": ["src/locales"],
+  "i18n-ally.sourceLanguage": "en"
 }
