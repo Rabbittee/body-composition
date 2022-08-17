@@ -1,6 +1,6 @@
 {
   "name": "body-composition",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "homepage": "https://rabbittee.github.io/body-composition",
   "private": true,
   "dependencies": {
