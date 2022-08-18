@@ -1,10 +1,50 @@
 {
   "common": {
-    "source": "Source: "
+    "source": "Source: ",
+    "cm": "公分",
+    "count": "計算",
+    "gender": "性別",
+    "birth": "生日",
+    "height": "身高",
+    "weight": "體重",
+    "bodyFat": "體脂",
+    "waist": "腰圍",
+    "activity": "活動量",
+    "pregnancy": "懷孕哺乳狀態"
   },
   "meta": {
     "slogan": "計算你的健康指標",
-    "source": "王介立醫師"
+    "source": "王介立醫師",
+    "dailyHeatSuggest": "每日熱量攝取建議",
+    "waistAndHight": "腰身高比",
+    "basalMetabolism": "基礎代謝率",
+    "bodySurfaceArea": "體表面積"
+  },
+  "options": {
+    "male": "男性",
+    "female": "女性",
+    "scarcely": "幾乎不動",
+    "mild": "輕度",
+    "moderate": "中度",
+    "severe": "重度",
+    "moderateToSevere": "中重度",
+    "verySevere": "極重度",
+    "first": "第一孕期",
+    "second": "第二孕期",
+    "thirth": "第三孕期",
+    "suckle": "哺乳"
+  },
+  "info": {
+    "dailyHeatSuggest": "根據活動量及最低BMR計算",
+    "waistAndHight": "根據活動量及最低BMR計算",
+    "basalMetabolism": "適用於肥胖者",
+    "Katch-McArdle": "計算包含體脂",
+    "FAO": "來自FAO的營養研究",
+    "Redman": "來自雙標水研究",
+    "Dubois": "肥胖者會低估3-5%",
+    "Dubois-Corrected": "校正肥胖不準確",
+    "Yu": "研究來自台灣工人",
+    "Haycock": "可適用BSA 0.2-2.0(嬰兒適用)"
   },
   "enum": {
     "gender": {

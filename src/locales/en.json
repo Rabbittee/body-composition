@@ -1,10 +1,50 @@
 {
   "common": {
-    "source": "Source: "
+    "source": "Source: ",
+    "cm": "cm",
+    "count": "count",
+    "gender": "gender",
+    "birth": "birthday",
+    "height": "height",
+    "weight": "weight",
+    "bodyFat": "body fat",
+    "waist": "waistline",
+    "activity": "amount of activity",
+    "pregnancy": "pregnancy breastfeeding"
   },
   "meta": {
     "slogan": "Knowing your health status",
-    "source": "Dr. Wang"
+    "source": "Dr. Wang",
+    "dailyHeatSuggest": "daily heat suggest",
+    "waistAndHight": "waist to height ratio",
+    "basalMetabolism": "basal metabolic rate",
+    "bodySurfaceArea": "body surface area"
+  },
+  "options": {
+    "male": "male",
+    "female": "female",
+    "scarcely": "scarcely",
+    "mild": "mild",
+    "moderate": "moderate",
+    "severe": "severe",
+    "moderateToSevere": "moderate to severe",
+    "verySevere": "very severe",
+    "first": "Phase 1",
+    "second": "Phase 2",
+    "thirth": "Phase 3",
+    "suckle": "suckle"
+  },
+  "info": {
+    "dailyHeatSuggest": "daily heat suggest information",
+    "waistAndHight": "calculated based on activity level and minimum BMR",
+    "basalMetabolism": "suitable for obese",
+    "Katch-McArdle": "calculate body fat",
+    "FAO": "nutrition research from FAO",
+    "Redman": "from Double-Standard Water Research",
+    "Dubois": "obese people underestimate by 3-5%",
+    "Dubois-Corrected": "correcting for obesity inaccurate",
+    "Yu": "research from Taiwanese workers",
+    "Haycock": "applicable to BSA 0.2-2.0 (for infants)"
   },
   "enum": {
     "gender": {
