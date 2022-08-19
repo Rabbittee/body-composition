@@ -1,7 +1,6 @@
 {
   "name": "body-composition",
   "version": "1.0.0",
-  "homepage": "https://rabbittee.github.io/body-composition",
   "private": true,
   "dependencies": {
     "@heroicons/react": "^1.0.6",
