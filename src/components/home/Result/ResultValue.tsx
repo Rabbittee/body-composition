@@ -13,13 +13,7 @@ export function ResultValue({ option, title }: Props) {
   const bodyInfo = useStore((state) => state.bodyInfo);
   const { text, desc, fn } = option;
 
-  const value = useMemo(() => {
-    try {
-      return fn(bodyInfo);
-    } catch {
-      return '-';
-    }
-  }, [bodyInfo, fn]);
+  const value = useMemo(() => fn(bodyInfo), [bodyInfo, fn]);
 
   return (
     <div>

@@ -1,12 +1,13 @@
 import Decimal from 'decimal.js';
 import { yearfrac } from 'formula';
+import { formulaGuard } from 'utils/formulaHelper';
 import { BodyInfo, Gender } from '../../models';
 
 // # Men
 // BMR = 10 x weight[kg] + 6.25 x height[cm] - 5 x age[y] + 5
 // # Women
 // BMR = 10 x weight[kg] + 6.25 x height[cm] - 5 x age[y] - 161
-export function calMifflinStJeor(bodyInfo: BodyInfo) {
+function fn(bodyInfo: BodyInfo) {
   const { height, weight, gender, birth } = bodyInfo;
 
   return new Decimal(new Decimal(10).times(weight))
@@ -16,3 +17,5 @@ export function calMifflinStJeor(bodyInfo: BodyInfo) {
     .round()
     .toString();
 }
+
+export const calcMifflinStJeor = formulaGuard(fn);
