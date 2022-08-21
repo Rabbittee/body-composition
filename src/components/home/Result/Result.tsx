@@ -1,4 +1,4 @@
-import { genList } from 'utils/_enumHelper';
+import { genList } from 'utils/enumHelper';
 import { ResultItemType } from './Options';
 import { ResultItem } from './ResultItem';
 
