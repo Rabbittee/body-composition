@@ -1,4 +1,5 @@
 import Decimal from 'decimal.js';
+import { formulaGuard } from 'utils/formulaHelper';
 import { BodyInfo, Gender } from '../../models';
 
 // LBM = (Weight[kg] * (100 - Body Fat[%])/100
@@ -18,7 +19,7 @@ function LBMFemale(weight: number, height: number) {
 
 // BMR = 370 + (21.6 * Lean Body Mass[kg])
 // FIXME: bodyFat shouldn't be undefined
-export function calKatchMcArdle(bodyInfo: BodyInfo) {
+function fn(bodyInfo: BodyInfo) {
   const { height, weight, gender, bodyFat } = bodyInfo;
 
   let LBM = new Decimal(0);
@@ -33,3 +34,5 @@ export function calKatchMcArdle(bodyInfo: BodyInfo) {
 
   return new Decimal(370).plus(new Decimal(21.6).times(LBM)).round().toString();
 }
+
+export const calcKatchMcArdle = formulaGuard(fn);

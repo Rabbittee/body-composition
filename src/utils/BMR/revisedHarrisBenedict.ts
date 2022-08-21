@@ -1,5 +1,6 @@
 import Decimal from 'decimal.js';
 import { yearfrac } from 'formula';
+import { formulaGuard } from 'utils/formulaHelper';
 import { BodyInfo, Gender } from '../../models';
 
 // BMR = 88.362 + (13.397 × weight[kg]) + (4.799 × height[cm]) - (5.677 × age[y])
@@ -20,7 +21,7 @@ function calFemale(height: number, weight: number, age: Decimal) {
     .round();
 }
 
-export function calRevisedHarrisBenedict(bodyInfo: BodyInfo) {
+function fn(bodyInfo: BodyInfo) {
   const { height, weight, gender, birth } = bodyInfo;
   const age = new Decimal(yearfrac(birth, new Date())).ceil();
 
@@ -30,3 +31,5 @@ export function calRevisedHarrisBenedict(bodyInfo: BodyInfo) {
 
   return calFemale(height, weight, age).toString();
 }
+
+export const calcRevisedHarrisBenedict = formulaGuard(fn);

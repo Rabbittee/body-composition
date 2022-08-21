@@ -1,5 +1,6 @@
 import Decimal from 'decimal.js';
 import { yearfrac } from 'formula';
+import { formulaGuard } from 'utils/formulaHelper';
 import { BodyInfo, Gender } from '../../models';
 import { RobertsonReidParameters } from './parameters';
 
@@ -16,38 +17,34 @@ enum Estimate {
   High = 'High',
 }
 
-const calRobertsonAndReid = (estimate: Estimate) => (bodyInfo: BodyInfo) => {
+const fn = (estimate: Estimate) => (bodyInfo: BodyInfo) => {
   const { birth, height, weight, gender } = bodyInfo;
 
   const isMale = gender === Gender.Male;
 
-  try {
-    const age = new Decimal(yearfrac(birth, new Date())).ceil();
-    const maxAge = isMale ? 80 : 75;
+  const age = new Decimal(yearfrac(birth, new Date())).ceil();
+  const maxAge = isMale ? 80 : 75;
 
-    if (age.lessThan(3) || age.greaterThan(maxAge)) {
-      return `僅支援3歲至${maxAge}歲之年齡`;
-    }
-
-    const index = age.minus(3).toNumber();
-
-    const base = new Decimal(0.007184)
-      .times(new Decimal(height).toPower(0.725))
-      .times(new Decimal(weight).toPower(0.425))
-      .times(24);
-
-    const key: keyof typeof RobertsonReidParameters = isMale
-      ? `Male_${estimate}`
-      : `Female_${estimate}`;
-
-    const parameter = RobertsonReidParameters[key][index];
-
-    return base.times(parameter).round().toString();
-  } catch {
-    return '-';
+  if (age.lessThan(3) || age.greaterThan(maxAge)) {
+    return `僅支援3歲至${maxAge}歲之年齡`;
   }
+
+  const index = age.minus(3).toNumber();
+
+  const base = new Decimal(0.007184)
+    .times(new Decimal(height).toPower(0.725))
+    .times(new Decimal(weight).toPower(0.425))
+    .times(24);
+
+  const key: keyof typeof RobertsonReidParameters = isMale
+    ? `Male_${estimate}`
+    : `Female_${estimate}`;
+
+  const parameter = RobertsonReidParameters[key][index];
+
+  return base.times(parameter).round().toString();
 };
 
-export const calRobertsonAndReidLow = calRobertsonAndReid(Estimate.Low);
-export const calRobertsonAndReidMean = calRobertsonAndReid(Estimate.Mean);
-export const calRobertsonAndReidHigh = calRobertsonAndReid(Estimate.High);
+export const calcRobertsonAndReidLow = formulaGuard(fn(Estimate.Low));
+export const calcRobertsonAndReidMean = formulaGuard(fn(Estimate.Mean));
+export const calcRobertsonAndReidHigh = formulaGuard(fn(Estimate.High));

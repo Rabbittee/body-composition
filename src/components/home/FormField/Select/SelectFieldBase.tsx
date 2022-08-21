@@ -1,5 +1,5 @@
 import { useFormContext } from 'react-hook-form';
-import { genList } from 'utils/EnumHelper';
+import { genList } from 'utils/_enumHelper';
 import { SelectFieldType, SELECT_TYPE } from '../SelectFieldType';
 
 // type Key = keyof typeof Gender | keyof typeof Activity | keyof typeof Pregnancy;
