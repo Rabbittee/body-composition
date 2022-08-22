@@ -2,7 +2,7 @@
   "common": {
     "source": "Source: ",
     "cm": "公分",
-    "count": "計算",
+    "calculate": "計算",
     "gender": "性別",
     "birth": "生日",
     "height": "身高",
@@ -18,7 +18,8 @@
     "dailyHeatSuggest": "每日熱量攝取建議",
     "waistAndHight": "腰身高比",
     "basalMetabolism": "基礎代謝率",
-    "bodySurfaceArea": "體表面積"
+    "bodySurfaceArea": "體表面積",
+    "tdee": "TDEE"
   },
   "options": {
     "male": "男性",

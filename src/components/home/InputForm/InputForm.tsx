@@ -122,7 +122,7 @@ export function InputForm() {
         <SelectField.Pregnancy disabled={gender === Gender.Male} />
 
         <button type="submit" className="btn col-span-2 mt-2 bg-teal md:col-span-1 md:mt-auto">
-          計算
+          {t('common.calculate')}
         </button>
       </form>
     </FormProvider>
