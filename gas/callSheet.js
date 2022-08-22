@@ -68,6 +68,5 @@ function getAns(inputCase = null) {
 
   updateInput(input);
   const ans = getValue(outoutCells);
-  Logger.log(formatOutput(ans));
   return formatOutput(ans);
 }

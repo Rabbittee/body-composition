@@ -1,0 +1,180 @@
+[
+    {
+        "birth": "1970-07-22",
+        "height": 180,
+        "weight": 65,
+        "lines": {
+            "waistLine": 90,
+            "neckLine": 36,
+            "hipLine": 95
+        },
+        "skinfolds": {
+            "abdominal": 16,
+            "thigh": 11,
+            "triceps": 6,
+            "supraspinale": 20
+        },
+        "bodyFat": 20,
+        "gender": "男",
+        "activity": "幾乎不動",
+        "pregnancy": ""
+    },
+    {
+        "birth": "1980-07-22",
+        "height": 180,
+        "weight": 65,
+        "lines": {
+            "waistLine": 90,
+            "neckLine": 36,
+            "hipLine": 95
+        },
+        "skinfolds": {
+            "abdominal": 16,
+            "thigh": 11,
+            "triceps": 6,
+            "supraspinale": 20
+        },
+        "bodyFat": 20,
+        "gender": "男",
+        "activity": "幾乎不動",
+        "pregnancy": ""
+    },
+    {
+        "birth": "1990-07-22",
+        "height": 180,
+        "weight": 65,
+        "lines": {
+            "waistLine": 90,
+            "neckLine": 36,
+            "hipLine": 95
+        },
+        "skinfolds": {
+            "abdominal": 16,
+            "thigh": 11,
+            "triceps": 6,
+            "supraspinale": 20
+        },
+        "bodyFat": 20,
+        "gender": "男",
+        "activity": "幾乎不動",
+        "pregnancy": ""
+    },
+    {
+        "birth": "1980-07-22",
+        "height": 180,
+        "weight": 65,
+        "lines": {
+            "waistLine": 90,
+            "neckLine": 36,
+            "hipLine": 95
+        },
+        "skinfolds": {
+            "abdominal": 16,
+            "thigh": 11,
+            "triceps": 6,
+            "supraspinale": 20
+        },
+        "bodyFat": 20,
+        "gender": "女",
+        "activity": "幾乎不動",
+        "pregnancy": ""
+    },
+    {
+        "birth": "1980-07-22",
+        "height": 180,
+        "weight": 80,
+        "lines": {
+            "waistLine": 90,
+            "neckLine": 36,
+            "hipLine": 95
+        },
+        "skinfolds": {
+            "abdominal": 16,
+            "thigh": 11,
+            "triceps": 6,
+            "supraspinale": 20
+        },
+        "bodyFat": 20,
+        "gender": "男",
+        "activity": "幾乎不動",
+        "pregnancy": ""
+    },
+    {
+        "birth": "1980-07-22",
+        "height": 180,
+        "weight": 100,
+        "lines": {
+            "waistLine": 90,
+            "neckLine": 36,
+            "hipLine": 95
+        },
+        "skinfolds": {
+            "abdominal": 16,
+            "thigh": 11,
+            "triceps": 6,
+            "supraspinale": 20
+        },
+        "bodyFat": 20,
+        "gender": "男",
+        "activity": "幾乎不動",
+        "pregnancy": ""
+    },
+    {
+        "birth": "2000-07-22",
+        "height": 180,
+        "weight": 90,
+        "lines": {
+            "waistLine": 90,
+            "neckLine": 36,
+            "hipLine": 95
+        },
+        "skinfolds": {
+            "abdominal": 16,
+            "thigh": 11,
+            "triceps": 6,
+            "supraspinale": 20
+        },
+        "bodyFat": 20,
+        "gender": "男",
+        "activity": "幾乎不動",
+        "pregnancy": ""
+    },
+    {
+        "birth": "1990-07-22",
+        "height": 180,
+        "weight": 65,
+        "lines": {
+            "waistLine": 90,
+            "neckLine": 36,
+            "hipLine": 95
+        },
+        "skinfolds": {
+            "abdominal": 16,
+            "thigh": 11,
+            "triceps": 6,
+            "supraspinale": 20
+        },
+        "bodyFat": 20,
+        "activity": "幾乎不動",
+        "pregnancy": ""
+    },
+    {
+        "birth": "2000-07-22",
+        "height": 180,
+        "weight": 90,
+        "lines": {
+            "waistLine": 90,
+            "neckLine": 36,
+            "hipLine": 95
+        },
+        "skinfolds": {
+            "abdominal": 16,
+            "thigh": 11,
+            "triceps": 6,
+            "supraspinale": 20
+        },
+        "bodyFat": 20,
+        "activity": "幾乎不動",
+        "pregnancy": ""
+    }
+]

@@ -29,7 +29,7 @@ const inputSort = [
     sub: ['waistLine', 'neckLine', 'hipLine'],
   },
   {
-    key: 'skinfold',
+    key: 'skinfolds',
     sub: ['abdominal', 'thigh', 'triceps', 'supraspinale'],
   },
   'bodyFat',
@@ -48,7 +48,7 @@ const cases = [
       neckLine: 36,
       hipLine: 95,
     },
-    skinfold: {
+    skinfolds: {
       abdominal: 16,
       thigh: 11,
       triceps: 6,

@@ -48,7 +48,7 @@ components:
           default: 65
         lines:
           $ref: '#/components/schemas/Lines'
-        skinfold:
+        skinfolds:
           $ref: '#/components/schemas/Skinfolds'
         bodyFat:
           type: number

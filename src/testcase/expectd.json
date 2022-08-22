@@ -1,0 +1,263 @@
+[
+    {
+        "dailyCalories": "1928",
+        "BMI": "20.1",
+        "WHtR": "0.5",
+        "bodyFat": {
+            "skinfolds": "16.6",
+            "lines": "21.2"
+        },
+        "BMR": {
+            "robertsonAndReidLow": "1263",
+            "robertsonAndReidMean": "1483",
+            "robertsonAndReidHigh": "1702",
+            "revisedHarrisBenedict": "1522",
+            "mifflinStJeor": "1515",
+            "katchMcArdle": "1493",
+            "oxfordEquation": "1516"
+        },
+        "TDEE": {
+            "FAO": "3201",
+            "redman": "2588"
+        },
+        "BSA": {
+            "doubois": "1.83",
+            "duboisCorrected": "1.79",
+            "yu": "1.72",
+            "haycock": "1.79",
+            "mosteller": "1.8"
+        }
+    },
+    {
+        "dailyCalories": "1941",
+        "BMI": "20.1",
+        "WHtR": "0.5",
+        "bodyFat": {
+            "skinfolds": "15",
+            "lines": "21.2"
+        },
+        "BMR": {
+            "robertsonAndReidLow": "1294",
+            "robertsonAndReidMean": "1513",
+            "robertsonAndReidHigh": "1733",
+            "revisedHarrisBenedict": "1579",
+            "mifflinStJeor": "1565",
+            "katchMcArdle": "1493",
+            "oxfordEquation": "1516"
+        },
+        "TDEE": {
+            "FAO": "3201",
+            "redman": "2565"
+        },
+        "BSA": {
+            "doubois": "1.83",
+            "duboisCorrected": "1.79",
+            "yu": "1.72",
+            "haycock": "1.79",
+            "mosteller": "1.8"
+        }
+    },
+    {
+        "dailyCalories": "1941",
+        "BMI": "20.1",
+        "WHtR": "0.5",
+        "bodyFat": {
+            "skinfolds": "13.4",
+            "lines": "21.2"
+        },
+        "BMR": {
+            "robertsonAndReidLow": "1364",
+            "robertsonAndReidMean": "1584",
+            "robertsonAndReidHigh": "1803",
+            "revisedHarrisBenedict": "1636",
+            "mifflinStJeor": "1615",
+            "katchMcArdle": "1493",
+            "oxfordEquation": "1516"
+        },
+        "TDEE": {
+            "FAO": "3201",
+            "redman": "2542"
+        },
+        "BSA": {
+            "doubois": "1.83",
+            "duboisCorrected": "1.79",
+            "yu": "1.72",
+            "haycock": "1.79",
+            "mosteller": "1.8"
+        }
+    },
+    {
+        "dailyCalories": "1725",
+        "BMI": "20.1",
+        "WHtR": "0.5",
+        "bodyFat": {
+            "skinfolds": "14.4",
+            "lines": "29"
+        },
+        "BMR": {
+            "robertsonAndReidLow": "1215",
+            "robertsonAndReidMean": "1426",
+            "robertsonAndReidHigh": "1641",
+            "revisedHarrisBenedict": "1420",
+            "mifflinStJeor": "1399",
+            "katchMcArdle": "1493",
+            "oxfordEquation": "1327"
+        },
+        "TDEE": {
+            "FAO": "2590",
+            "redman": "2227"
+        },
+        "BSA": {
+            "doubois": "1.83",
+            "duboisCorrected": "1.79",
+            "yu": "1.72",
+            "haycock": "1.79",
+            "mosteller": "1.8"
+        }
+    },
+    {
+        "dailyCalories": "2149",
+        "BMI": "24.7",
+        "WHtR": "0.5",
+        "bodyFat": {
+            "skinfolds": "15",
+            "lines": "21.2"
+        },
+        "BMR": {
+            "robertsonAndReidLow": "1413",
+            "robertsonAndReidMean": "1653",
+            "robertsonAndReidHigh": "1893",
+            "revisedHarrisBenedict": "1780",
+            "mifflinStJeor": "1715",
+            "katchMcArdle": "1752",
+            "oxfordEquation": "1729"
+        },
+        "TDEE": {
+            "FAO": "3725",
+            "redman": "2840"
+        },
+        "BSA": {
+            "doubois": "2",
+            "duboisCorrected": "1.97",
+            "yu": "1.91",
+            "haycock": "2.01",
+            "mosteller": "2"
+        }
+    },
+    {
+        "dailyCalories": "2363",
+        "BMI": "30.9",
+        "WHtR": "0.5",
+        "bodyFat": {
+            "skinfolds": "15",
+            "lines": "21.2"
+        },
+        "BMR": {
+            "robertsonAndReidLow": "1554",
+            "robertsonAndReidMean": "1817",
+            "robertsonAndReidHigh": "2081",
+            "revisedHarrisBenedict": "2048",
+            "mifflinStJeor": "1915",
+            "katchMcArdle": "2098",
+            "oxfordEquation": "2013"
+        },
+        "TDEE": {
+            "FAO": "4384",
+            "redman": "3206"
+        },
+        "BSA": {
+            "doubois": "2.2",
+            "duboisCorrected": "2.17",
+            "yu": "2.14",
+            "haycock": "2.26",
+            "mosteller": "2.24"
+        }
+    },
+    {
+        "dailyCalories": "2462",
+        "BMI": "27.8",
+        "WHtR": "0.5",
+        "bodyFat": {
+            "skinfolds": "11.9",
+            "lines": "21.2"
+        },
+        "BMR": {
+            "robertsonAndReidLow": "1627",
+            "robertsonAndReidMean": "1894",
+            "robertsonAndReidHigh": "2146",
+            "revisedHarrisBenedict": "2027",
+            "mifflinStJeor": "1915",
+            "katchMcArdle": "1925",
+            "oxfordEquation": "1985"
+        },
+        "TDEE": {
+            "FAO": "4059",
+            "redman": "2977"
+        },
+        "BSA": {
+            "doubois": "2.1",
+            "duboisCorrected": "2.07",
+            "yu": "2.03",
+            "haycock": "2.14",
+            "mosteller": "2.12"
+        }
+    },
+    {
+        "dailyCalories": "1941",
+        "BMI": "20.1",
+        "WHtR": "0.5",
+        "bodyFat": {
+            "skinfolds": "13.4",
+            "lines": "21.2"
+        },
+        "BMR": {
+            "robertsonAndReidLow": "1364",
+            "robertsonAndReidMean": "1584",
+            "robertsonAndReidHigh": "1803",
+            "revisedHarrisBenedict": "1636",
+            "mifflinStJeor": "1615",
+            "katchMcArdle": "1493",
+            "oxfordEquation": "1516"
+        },
+        "TDEE": {
+            "FAO": "3201",
+            "redman": "2542"
+        },
+        "BSA": {
+            "doubois": "1.83",
+            "duboisCorrected": "1.79",
+            "yu": "1.72",
+            "haycock": "1.79",
+            "mosteller": "1.8"
+        }
+    },
+    {
+        "dailyCalories": "2462",
+        "BMI": "27.8",
+        "WHtR": "0.5",
+        "bodyFat": {
+            "skinfolds": "11.9",
+            "lines": "21.2"
+        },
+        "BMR": {
+            "robertsonAndReidLow": "1627",
+            "robertsonAndReidMean": "1894",
+            "robertsonAndReidHigh": "2146",
+            "revisedHarrisBenedict": "2027",
+            "mifflinStJeor": "1915",
+            "katchMcArdle": "1925",
+            "oxfordEquation": "1985"
+        },
+        "TDEE": {
+            "FAO": "4059",
+            "redman": "2977"
+        },
+        "BSA": {
+            "doubois": "2.1",
+            "duboisCorrected": "2.07",
+            "yu": "2.03",
+            "haycock": "2.14",
+            "mosteller": "2.12"
+        }
+    }
+]
