@@ -15,7 +15,11 @@ const basicCase: BodyInfo = {
   height: 180,
   weight: 65,
   bodyFat: 20,
-  waist: 90,
+  lines: {
+    waistLine: 90,
+    neckLine: 36,
+    hipLine: 95,
+  },
   activity: Activity.Sedentary,
   pregnancy: Pregnancy.None,
 };

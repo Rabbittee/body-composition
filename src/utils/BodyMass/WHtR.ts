@@ -8,8 +8,11 @@ import { formulaGuard } from 'utils/formulaHelper';
  * formula: height / waist
  */
 function fn(bodyInfo: BodyInfo) {
-  const { height, waist } = bodyInfo;
-  return new Decimal(waist).div(height).toFixed(2);
+  const {
+    height,
+    lines: { waistLine },
+  } = bodyInfo;
+  return new Decimal(waistLine).div(height).toFixed(2);
 }
 
 export const calcWHtR = formulaGuard(fn);

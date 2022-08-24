@@ -27,5 +27,5 @@ export const INPUT_TYPE: FieldTypeMap = {
   [InputFieldType.Height]: { name: 'height', text: '身高(公分)', placeholder: '175' },
   [InputFieldType.Weight]: { name: 'weight', text: '體重(公斤)', placeholder: '70' },
   [InputFieldType.BodyFat]: { name: 'bodyFat', text: '體脂(%)', placeholder: '20' },
-  [InputFieldType.Waist]: { name: 'waist', text: '腰圍(公分)', placeholder: '79' },
+  [InputFieldType.Waist]: { name: 'lines.waistLine', text: '腰圍(公分)', placeholder: '79' },
 };

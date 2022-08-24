@@ -230,34 +230,5 @@
             "haycock": "1.79",
             "mosteller": "1.8"
         }
-    },
-    {
-        "dailyCalories": "2462",
-        "BMI": "27.8",
-        "WHtR": "0.5",
-        "bodyFat": {
-            "skinfolds": "11.9",
-            "lines": "21.2"
-        },
-        "BMR": {
-            "robertsonAndReidLow": "1627",
-            "robertsonAndReidMean": "1894",
-            "robertsonAndReidHigh": "2146",
-            "revisedHarrisBenedict": "2027",
-            "mifflinStJeor": "1915",
-            "katchMcArdle": "1925",
-            "oxfordEquation": "1985"
-        },
-        "TDEE": {
-            "FAO": "4059",
-            "redman": "2977"
-        },
-        "BSA": {
-            "doubois": "2.1",
-            "duboisCorrected": "2.07",
-            "yu": "2.03",
-            "haycock": "2.14",
-            "mosteller": "2.12"
-        }
     }
 ]

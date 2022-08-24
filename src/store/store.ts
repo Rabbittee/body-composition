@@ -9,7 +9,11 @@ export const defaultBodyInfo: BodyInfo = {
   height: 175,
   weight: 70,
   bodyFat: 20,
-  waist: 79,
+  lines: {
+    waistLine: 79,
+    neckLine: 36,
+    hipLine: 95,
+  },
   activity: Activity.Moderate,
   pregnancy: Pregnancy.None,
 };
