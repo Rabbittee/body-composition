@@ -137,7 +137,7 @@
             "redman": "2840"
         },
         "BSA": {
-            "doubois": "2",
+            "doubois": "2.00",
             "duboisCorrected": "1.97",
             "yu": "1.91",
             "haycock": "2.01",
@@ -166,7 +166,7 @@
             "redman": "3206"
         },
         "BSA": {
-            "doubois": "2.2",
+            "doubois": "2.20",
             "duboisCorrected": "2.17",
             "yu": "2.14",
             "haycock": "2.26",
@@ -195,7 +195,7 @@
             "redman": "2977"
         },
         "BSA": {
-            "doubois": "2.1",
+            "doubois": "2.10",
             "duboisCorrected": "2.07",
             "yu": "2.03",
             "haycock": "2.14",
@@ -253,7 +253,7 @@
             "redman": "2977"
         },
         "BSA": {
-            "doubois": "2.1",
+            "doubois": "2.10",
             "duboisCorrected": "2.07",
             "yu": "2.03",
             "haycock": "2.14",
