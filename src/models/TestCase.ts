@@ -37,8 +37,3 @@ export interface Expected {
   TDEE: TDEE;
   BSA: BSA;
 }
-
-export type TestCaseBase<T> = {
-  bodyInfo: BodyInfo;
-  expected: T;
-};
