@@ -1,5 +1,3 @@
-import { BodyInfo } from './BodyInfo';
-
 interface BodyFat {
   skinfolds: string;
   lines: string;
