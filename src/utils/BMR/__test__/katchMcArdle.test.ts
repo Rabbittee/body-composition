@@ -1,8 +1,7 @@
 import { calcKatchMcArdle } from '../katchMcArdle';
-import { testCase } from './testCase';
+import { testFn } from '../../../testcase';
+import { Expected } from 'models';
 
-describe('BMR - calKatchMcArdle', () => {
-  test.concurrent.each(testCase)('case index($#)', async ({ expected, bodyInfo }) => {
-    expect(calcKatchMcArdle(bodyInfo)).toBe(expected.calKatchMcArdle);
-  });
-});
+const getAns = (expected: Expected) => expected.BMR.katchMcArdle;
+
+describe(`BMR - calcKatchMcArdle`, testFn(getAns, calcKatchMcArdle));

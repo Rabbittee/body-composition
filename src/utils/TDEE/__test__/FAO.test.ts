@@ -1,16 +1,7 @@
 import { calcFAO } from '../FAO';
-import { testCases } from '../../../testcase';
+import { testFn } from '../../../testcase';
+import { Expected } from 'models';
 
-describe('test FAO()', () => {
-  test.concurrent.each(testCases)(
-    'TDEE FAO case - index: %#, %o',
-    async ({
-      expected: {
-        TDEE: { FAO },
-      },
-      input: bodyInfo,
-    }) => {
-      expect(calcFAO(bodyInfo)).toBe(FAO);
-    }
-  );
-});
+const getAns = (expected: Expected) => expected.TDEE.FAO;
+
+describe('TDEE - calcFAO', testFn(getAns, calcFAO));

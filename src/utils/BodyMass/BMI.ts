@@ -11,7 +11,7 @@ import { formulaGuard } from 'utils/formulaHelper';
  */
 function fn(bodyInfo: BodyInfo) {
   const { height, weight } = bodyInfo;
-  return new Decimal(weight).div(new Decimal(height).div(100).pow(2)).toFixed(2);
+  return new Decimal(weight).div(new Decimal(height).div(100).pow(2)).toFixed(1);
 }
 
 export const calcBMI = formulaGuard(fn);

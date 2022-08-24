@@ -7,9 +7,15 @@ interface TestCase {
   expected: Expected;
 }
 
-export const testCases: TestCase[] = testCaseInput.map((item, i) => {
+const testCases: TestCase[] = testCaseInput.map((item, i) => {
   return {
     input: item as BodyInfo,
     expected: testCaseExpected[i] as Expected,
   };
 });
+
+export const testFn = (getAns: Function, fn: Function) => () => {
+  test.concurrent.each(testCases)('case index($#)', async (caseData) => {
+    expect(fn(caseData.input)).toBe(getAns(caseData.expected));
+  });
+};
