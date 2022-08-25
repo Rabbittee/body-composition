@@ -1,6 +1,6 @@
 import testCaseInput from './input.json';
 import testCaseExpected from './expected.json';
-import { BodyInfo, Expected } from '../models';
+import { BodyInfo, Expected, Formula } from '../models';
 
 interface TestCase {
   input: BodyInfo;
@@ -14,8 +14,8 @@ const testCases: TestCase[] = testCaseInput.map((item, i) => {
   };
 });
 
-export const testFn = (getAns: Function, fn: Function) => () => {
-  test.concurrent.each(testCases)('case index($#)', async (caseData) => {
-    expect(fn(caseData.input)).toBe(getAns(caseData.expected));
+export const testFn = (getAns: (expected: Expected) => string, fn: Formula) => () => {
+  test.concurrent.each(testCases)('case index($#)', async ({ input, expected }) => {
+    expect(fn(input)).toBe(getAns(expected));
   });
 };
