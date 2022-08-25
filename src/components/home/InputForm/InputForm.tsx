@@ -48,7 +48,7 @@ export function InputForm() {
 
   useEffect(() => {
     localStorage && setBodyInfo(localStorage);
-  }, [localStorage]);
+  }, [localStorage, setBodyInfo]);
 
   useEffect(() => {
     if (gender === Gender.Male) setValue('pregnancy', Pregnancy.None);
