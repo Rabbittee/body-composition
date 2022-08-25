@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
+import { DevTool } from '@hookform/devtools';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useLocalStorage } from 'react-use';
 import * as yup from 'yup';
@@ -31,7 +32,7 @@ export function InputForm() {
     resolver: yupResolver(schema),
   });
 
-  const { handleSubmit, watch, setValue } = methods;
+  const { control, handleSubmit, watch, setValue } = methods;
 
   const gender = watch('gender');
 
@@ -53,6 +54,8 @@ export function InputForm() {
 
   return (
     <FormProvider {...methods}>
+      <DevTool control={control} placement="top-left" />
+
       <form
         className="grid grid-cols-2 grid-rows-5 gap-2 md:grid-cols-3 md:grid-rows-3"
         onSubmit={handleSubmit(onSubmit)}
