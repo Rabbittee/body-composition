@@ -1,4 +1,5 @@
 import clsx from 'clsx';
+import { useTranslation } from 'react-i18next';
 import { Tooltip } from 'components/common';
 import { useMemo } from 'react';
 import { useStore } from 'store';
@@ -10,6 +11,7 @@ type Props = {
 };
 
 export function ResultValue({ option, title }: Props) {
+  const { t } = useTranslation();
   const bodyInfo = useStore((state) => state.bodyInfo);
   const { text, desc, fn } = option;
 
@@ -18,8 +20,7 @@ export function ResultValue({ option, title }: Props) {
   return (
     <div>
       <div className="flex items-center space-x-1 text-sm font-black text-teal md:text-3xl">
-        {title ?? text}
-
+        {t(title ?? text)}
         <Tooltip text={desc} />
       </div>
 

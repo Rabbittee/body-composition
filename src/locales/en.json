@@ -1,21 +1,22 @@
 {
   "common": {
     "source": "Source: ",
-    "cm": "cm",
     "calculate": "Calculate",
     "gender": "Gender",
     "birth": "Birthday",
-    "height": "Height(CM)",
-    "weight": "Weight(KG)",
-    "bodyFat": "Body Fat(%)",
-    "waist": "Waistline(CM)",
+    "height": "Height (cm)",
+    "weight": "Weight (kg)",
+    "bodyFat": "Body Fat (%)",
+    "waistLine": "Waistline (cm)",
+    "neckLine": "NeckLine",
+    "hipLine": "HipLine",
     "activity": "Activity Level",
-    "pregnancy": "Pregnancy Breastfeeding",
-    "dailyHeatSuggest": "Daily Heat Suggest",
-    "waistAndHight": "Waist to Height Ratio",
-    "basalMetabolism": "Basal Metabolic Rate",
-    "bodySurfaceArea": "Body Surface Area",
-    "tdee": "TDEE"
+    "pregnancy": "Pregnancy",
+    "dailyCalories": "Daily Calories (kcal)",
+    "WHtR": "Waist to Height Ratio",
+    "BMR": "Basal Metabolic Rate (kcal)",
+    "BSA": "Body Surface Area",
+    "tdee": "TDEE (kcal)"
   },
   "meta": {
     "slogan": "Knowing your health status",

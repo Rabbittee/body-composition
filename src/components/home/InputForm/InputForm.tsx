@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { useEffect } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
 import { DevTool } from '@hookform/devtools';
@@ -55,6 +56,7 @@ const schema: yup.SchemaOf<BodyInfo> = yup.object().shape({
 });
 
 export function InputForm() {
+  const { t } = useTranslation();
   const [localStorage, setLocalStorage] = useLocalStorage<BodyInfo>(CONFIG.storageKey);
 
   const userBodyInfo = {
