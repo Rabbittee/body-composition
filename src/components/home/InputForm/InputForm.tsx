@@ -8,13 +8,46 @@ import { Activity, BodyInfo, Gender, Pregnancy } from 'models';
 import { defaultBodyInfo, useStore } from 'store';
 import { InputField, SelectField } from '..';
 
+const decimalCheck = (value: number | undefined, step: number) => {
+  const regex = new RegExp(`^\\d+(\\.\\d{1,${step}})?$`);
+  return (value + '').match(regex) !== null;
+};
+
 const schema: yup.SchemaOf<BodyInfo> = yup.object().shape({
   birth: yup.string().required(),
   gender: yup.mixed<Gender>().oneOf(Object.values(Gender)).required(),
-  height: yup.number().required(),
-  weight: yup.number().required(),
-  bodyFat: yup.number().required(),
-  waist: yup.number().required(),
+  height: yup
+    .number()
+    .max(270)
+    .min(10)
+    .required()
+    .test('is-decimal', 'Height must be a 1 decimal places number', (value) =>
+      decimalCheck(value, 1)
+    ),
+  weight: yup
+    .number()
+    .max(640)
+    .min(1)
+    .required()
+    .test('is-decimal', 'Weight must be a 1 decimal places number', (value) =>
+      decimalCheck(value, 1)
+    ),
+  bodyFat: yup
+    .number()
+    .max(100)
+    .min(0)
+    .required()
+    .test('is-decimal', 'BodyFat must be a 1 decimal places number', (value) =>
+      decimalCheck(value, 1)
+    ),
+  waist: yup
+    .number()
+    .max(310)
+    .min(20)
+    .required()
+    .test('is-decimal', 'Waist must be a 1 decimal places number', (value) =>
+      decimalCheck(value, 1)
+    ),
   activity: yup.mixed<Activity>().oneOf(Object.values(Activity)).required(),
   pregnancy: yup.mixed<Pregnancy>().oneOf(Object.values(Pregnancy)).required(),
 });
