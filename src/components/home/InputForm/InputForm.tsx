@@ -27,8 +27,10 @@ const schema: yup.SchemaOf<BodyInfo> = yup.object().shape({
 export function InputForm() {
   const [localStorage, setLocalStorage] = useLocalStorage<BodyInfo>(CONFIG.storageKey);
 
+  const userBodyInfo = { ...defaultBodyInfo, ...localStorage };
+
   const methods = useForm<BodyInfo>({
-    defaultValues: localStorage ? localStorage : defaultBodyInfo,
+    defaultValues: userBodyInfo,
     resolver: yupResolver(schema),
   });
 
