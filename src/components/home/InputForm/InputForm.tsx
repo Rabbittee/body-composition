@@ -14,7 +14,11 @@ const schema: yup.SchemaOf<BodyInfo> = yup.object().shape({
   height: yup.number().required(),
   weight: yup.number().required(),
   bodyFat: yup.number().required(),
-  waist: yup.number().required(),
+  lines: yup.object().shape({
+    waistLine: yup.number().required(),
+    neckLine: yup.number().required(),
+    hipLine: yup.number().required(),
+  }),
   activity: yup.mixed<Activity>().oneOf(Object.values(Activity)).required(),
   pregnancy: yup.mixed<Pregnancy>().oneOf(Object.values(Pregnancy)).required(),
 });

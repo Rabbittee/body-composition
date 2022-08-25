@@ -16,7 +16,18 @@ function getValue(range) {
 }
 
 function formatOutput(data) {
-  data = data.map((val) => val.toString());
+  data = data
+    .map((val, i) => {
+      if ([1, 3, 4].includes[i]) {
+        return val.toFixed(1);
+      }
+      if (i >= 12 || i == 2) {
+        return val.toFixed(2);
+      }
+      return val;
+    })
+    .map((val) => val.toString());
+
   const robertsonAndReid = data[5];
 
   return {

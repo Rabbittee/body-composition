@@ -1,8 +1,7 @@
 import { calcMifflinStJeor } from '../mifflinStJeor';
-import { testCase } from './testCase';
+import { testFn } from '../../../testcase';
+import { Expected } from 'models';
 
-describe('BMR - calMifflinStJeor', () => {
-  test.concurrent.each(testCase)('case index($#)', async ({ expected, bodyInfo }) => {
-    expect(calcMifflinStJeor(bodyInfo)).toBe(expected.calMifflinStJeor);
-  });
-});
+const getAns = (expected: Expected) => expected.BMR.mifflinStJeor;
+
+describe(`BMR - calcMifflinStJeor`, testFn(getAns, calcMifflinStJeor));

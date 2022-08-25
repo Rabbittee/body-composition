@@ -3,18 +3,15 @@ import {
   calcRobertsonAndReidLow,
   calcRobertsonAndReidMean,
 } from '../robertsonAndReid';
-import { testCase } from './testCase';
 
-describe('BMR - calRobertsonAndReid', () => {
-  test.concurrent.each(testCase)('case index($#) -> Low', async ({ expected, bodyInfo }) => {
-    expect(calcRobertsonAndReidLow(bodyInfo)).toStrictEqual(expected.calRobertsonAndReid.Low);
-  });
+import { testFn } from '../../../testcase';
+import { Expected } from 'models';
 
-  test.concurrent.each(testCase)('case index($#) -> Mean', async ({ expected, bodyInfo }) => {
-    expect(calcRobertsonAndReidMean(bodyInfo)).toStrictEqual(expected.calRobertsonAndReid.Mean);
-  });
+const getHighAns = (expected: Expected) => expected.BMR.robertsonAndReidHigh;
+describe(`BMR - calcRobertsonAndReidHigh`, testFn(getHighAns, calcRobertsonAndReidHigh));
 
-  test.concurrent.each(testCase)('case index($#) -> High', async ({ expected, bodyInfo }) => {
-    expect(calcRobertsonAndReidHigh(bodyInfo)).toStrictEqual(expected.calRobertsonAndReid.High);
-  });
-});
+const getLowAns = (expected: Expected) => expected.BMR.robertsonAndReidLow;
+describe(`BMR - calcRobertsonAndReidHigh`, testFn(getLowAns, calcRobertsonAndReidLow));
+
+const getMeanAns = (expected: Expected) => expected.BMR.robertsonAndReidMean;
+describe(`BMR - calcRobertsonAndReidHigh`, testFn(getMeanAns, calcRobertsonAndReidMean));

@@ -1,8 +1,7 @@
 import { calcOxfordEquation } from '../oxfordEquation';
-import { testCase } from './testCase';
+import { testFn } from '../../../testcase';
+import { Expected } from 'models';
 
-describe('BMR - calOxfordEquation', () => {
-  test.concurrent.each(testCase)('case index($#)', async ({ expected, bodyInfo }) => {
-    expect(calcOxfordEquation(bodyInfo)).toBe(expected.calOxfordEquation);
-  });
-});
+const getAns = (expected: Expected) => expected.BMR.oxfordEquation;
+
+describe(`BMR - calcOxfordEquation`, testFn(getAns, calcOxfordEquation));

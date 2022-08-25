@@ -42,6 +42,18 @@ export enum Pregnancy {
   Breastfeeding = '哺乳',
 }
 
+/** 圍度 */
+export interface Lines {
+  /** 腰圍 */
+  waistLine: number;
+
+  /** 頸圍 */
+  neckLine: number;
+
+  /** 臀圍 */
+  hipLine: number;
+}
+
 /** 身體參數 */
 export type BodyInfo = {
   birth: string;
@@ -49,7 +61,7 @@ export type BodyInfo = {
   height: number;
   weight: number;
   bodyFat: number;
-  waist: number;
+  lines: Lines;
 
   activity: Activity;
   pregnancy: Pregnancy;

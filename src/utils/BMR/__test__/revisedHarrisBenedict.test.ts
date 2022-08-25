@@ -1,8 +1,7 @@
 import { calcRevisedHarrisBenedict } from '../revisedHarrisBenedict';
-import { testCase } from './testCase';
+import { testFn } from '../../../testcase';
+import { Expected } from 'models';
 
-describe('BMR - calRevisedHarrisBenedict', () => {
-  test.concurrent.each(testCase)('case index($#)', async ({ expected, bodyInfo }) => {
-    expect(calcRevisedHarrisBenedict(bodyInfo)).toBe(expected.calRevisedHarrisBenedict);
-  });
-});
+const getAns = (expected: Expected) => expected.BMR.revisedHarrisBenedict;
+
+describe(`BMR - calcRevisedHarrisBenedict`, testFn(getAns, calcRevisedHarrisBenedict));
