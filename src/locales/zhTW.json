@@ -30,6 +30,7 @@
   "options": {
     "male": "男性",
     "female": "女性",
+<<<<<<< HEAD
     "scarcely": "幾乎不動",
     "mild": "輕度",
     "moderate": "中度",
@@ -40,12 +41,27 @@
     "second": "第二孕期",
     "thirth": "第三孕期",
     "suckle": "哺乳"
+=======
+    "sedentary": "幾乎不動",
+    "light": "輕度",
+    "moderate": "中度",
+    "active": "重度",
+    "veryActive": "極重度",
+    "firstTrimester": "第一孕期",
+    "secondTrimester": "第二孕期",
+    "thirdTrimester": "第三孕期",
+    "breastfeeding": "哺乳"
+>>>>>>> fix: 🐛 rename and prettier json files
   },
   "info": {
     "dailyCalories": "根據活動量及最低BMR計算",
-    "WHtR": "根據活動量及最低BMR計算",
+    "WHtR": "<0.5無風險; ≥0.6高風險",
     "basalMetabolism": "適用於肥胖者",
+<<<<<<< HEAD
     "Katch-McArdle": "計算包含體脂",
+=======
+    "KatchMcArdle": "計算包含體脂",
+>>>>>>> fix: 🐛 rename and prettier json files
     "FAO": "來自FAO的營養研究",
     "Redman": "來自雙標水研究",
     "Dubois": "肥胖者會低估3-5%",
