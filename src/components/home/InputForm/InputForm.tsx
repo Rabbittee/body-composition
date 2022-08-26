@@ -8,7 +8,6 @@ import { CONFIG } from 'config';
 import { Activity, BodyInfo, Gender, Pregnancy } from 'models';
 import { defaultBodyInfo, useStore } from 'store';
 import { InputField, SelectField } from '..';
-import { max } from 'formula';
 
 const decimalCheck = (value: number | undefined, step: number) => {
   const regex = new RegExp(`^\\d+(\\.\\d{1,${step}})?$`);
