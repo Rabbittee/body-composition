@@ -8,6 +8,7 @@ import { CONFIG } from 'config';
 import { Activity, BodyInfo, Gender, Pregnancy } from 'models';
 import { defaultBodyInfo, useStore } from 'store';
 import { InputField, SelectField } from '..';
+import { max } from 'formula';
 
 const decimalCheck = (value: number | undefined, step: number) => {
   const regex = new RegExp(`^\\d+(\\.\\d{1,${step}})?$`);
@@ -42,9 +43,30 @@ const schema: yup.SchemaOf<BodyInfo> = yup.object().shape({
       decimalCheck(value, 1)
     ),
   lines: yup.object().shape({
-    waistLine: yup.number().required(),
-    neckLine: yup.number().required(),
-    hipLine: yup.number().required(),
+    waistLine: yup
+      .number()
+      .max(310)
+      .min(20)
+      .required()
+      .test('is-decimal', 'Waist Line must be a 1 decimal places number', (value) =>
+        decimalCheck(value, 1)
+      ),
+    neckLine: yup
+      .number()
+      .max(80)
+      .min(10)
+      .required()
+      .test('is-decimal', 'Neck Line must be a 1 decimal places number', (value) =>
+        decimalCheck(value, 1)
+      ),
+    hipLine: yup
+      .number()
+      .max(240)
+      .min(10)
+      .required()
+      .test('is-decimal', 'Hip Line must be a 1 decimal places number', (value) =>
+        decimalCheck(value, 1)
+      ),
   }),
 
   activity: yup.mixed<Activity>().oneOf(Object.values(Activity)).required(),
