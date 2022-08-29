@@ -45,28 +45,28 @@ export enum Pregnancy {
 /** 圍度 */
 export interface Lines {
   /** 腰圍 */
-  waistLine: number;
+  waistLine?: number;
 
   /** 頸圍 */
-  neckLine: number;
+  neckLine?: number;
 
   /** 臀圍 */
-  hipLine: number;
+  hipLine?: number;
 }
 
 /** 皮摺厚度 */
 export interface Skinfolds {
   /** 腹壁(mm) */
-  abdominal: number;
+  abdominal?: number;
 
   /** 大腿(mm) */
-  thigh: number;
+  thigh?: number;
 
   /** 三頭(mm) */
-  triceps: number;
+  triceps?: number;
 
   /** 腸骨上(mm) */
-  supraspinale: number;
+  supraspinale?: number;
 }
 
 /** 身體參數 */
