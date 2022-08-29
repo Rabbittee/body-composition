@@ -14,6 +14,12 @@ export const defaultBodyInfo: BodyInfo = {
     neckLine: 36,
     hipLine: 95,
   },
+  skinfolds: {
+    abdominal: 16,
+    thigh: 11,
+    triceps: 6,
+    supraspinale: 20,
+  },
   activity: Activity.Moderate,
   pregnancy: Pregnancy.None,
 };

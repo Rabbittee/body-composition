@@ -54,6 +54,21 @@ export interface Lines {
   hipLine: number;
 }
 
+/** 皮摺厚度 */
+export interface Skinfolds {
+  /** 腹壁(mm) */
+  abdominal: number;
+
+  /** 大腿(mm) */
+  thigh: number;
+
+  /** 三頭(mm) */
+  triceps: number;
+
+  /** 腸骨上(mm) */
+  supraspinale: number;
+}
+
 /** 身體參數 */
 export type BodyInfo = {
   birth: string;
@@ -61,7 +76,9 @@ export type BodyInfo = {
   height: number;
   weight: number;
   bodyFat: number;
+
   lines: Lines;
+  skinfolds: Skinfolds;
 
   activity: Activity;
   pregnancy: Pregnancy;
