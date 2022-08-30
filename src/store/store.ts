@@ -8,18 +8,8 @@ export const defaultBodyInfo: BodyInfo = {
   gender: Gender.Male,
   height: 175,
   weight: 70,
-  bodyFat: 20,
-  lines: {
-    waistLine: 79,
-    neckLine: 36,
-    hipLine: 95,
-  },
-  skinfolds: {
-    abdominal: 16,
-    thigh: 11,
-    triceps: 6,
-    supraspinale: 20,
-  },
+  lines: {},
+  skinfolds: {},
   activity: Activity.Moderate,
   pregnancy: Pregnancy.None,
 };

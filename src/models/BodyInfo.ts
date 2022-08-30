@@ -75,7 +75,7 @@ export type BodyInfo = {
   gender: Gender;
   height: number;
   weight: number;
-  bodyFat: number;
+  bodyFat?: number | null;
 
   lines: Lines;
   skinfolds: Skinfolds;

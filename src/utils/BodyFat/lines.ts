@@ -30,8 +30,14 @@ function fn(bodyInfo: BodyInfo) {
   let coefficient = null;
 
   if (gender === Gender.Male) {
+    if (waistLine === undefined || neckLine === undefined) {
+      return '-';
+    }
     coefficient = cofMale(waistLine, neckLine, height);
   } else {
+    if (waistLine === undefined || neckLine === undefined || hipLine === undefined) {
+      return '-';
+    }
     coefficient = cofFemale(waistLine, neckLine, hipLine, height);
   }
 

@@ -14,7 +14,7 @@ const schema: yup.SchemaOf<BodyInfo> = yup.object().shape({
   gender: yup.mixed<Gender>().oneOf(Object.values(Gender)).required(),
   height: yup.number().required(),
   weight: yup.number().required(),
-  bodyFat: yup.number().required(),
+  bodyFat: yup.number().nullable(),
   lines: yup.object().shape({
     waistLine: yup.number(),
     neckLine: yup.number(),
@@ -33,7 +33,26 @@ const schema: yup.SchemaOf<BodyInfo> = yup.object().shape({
 export function InputForm() {
   const [localStorage, setLocalStorage] = useLocalStorage<BodyInfo>(CONFIG.storageKey);
 
-  const userBodyInfo = { ...defaultBodyInfo, ...localStorage };
+  const userBodyInfo = {
+    birth: localStorage?.birth ?? defaultBodyInfo.birth,
+    gender: localStorage?.gender ?? defaultBodyInfo.gender,
+    height: localStorage?.height ?? defaultBodyInfo.height,
+    weight: localStorage?.weight ?? defaultBodyInfo.weight,
+    activity: localStorage?.activity ?? defaultBodyInfo.activity,
+    pregnancy: localStorage?.pregnancy ?? defaultBodyInfo.pregnancy,
+    bodyFat: localStorage?.bodyFat,
+    lines: {
+      waistLine: localStorage?.lines.waistLine,
+      neckLine: localStorage?.lines.neckLine,
+      hipLine: localStorage?.lines.hipLine,
+    },
+    skinfolds: {
+      abdominal: localStorage?.skinfolds.abdominal,
+      thigh: localStorage?.skinfolds.thigh,
+      triceps: localStorage?.skinfolds.triceps,
+      supraspinale: localStorage?.skinfolds.supraspinale,
+    },
+  };
 
   const methods = useForm<BodyInfo>({
     defaultValues: userBodyInfo,
