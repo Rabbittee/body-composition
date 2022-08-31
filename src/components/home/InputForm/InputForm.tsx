@@ -11,7 +11,10 @@ import { InputField, SelectField } from '..';
 
 const schema: yup.SchemaOf<BodyInfo> = yup.object().shape({
   birth: yup.string().required(),
-  gender: yup.mixed<Gender>().oneOf(Object.values(Gender)).required(),
+  gender: yup
+    .number()
+    .oneOf(Array.from(Array(Object.keys(Gender).length / 2).keys()))
+    .required(),
   height: yup.number().required(),
   weight: yup.number().required(),
   bodyFat: yup.number().required(),
@@ -20,8 +23,14 @@ const schema: yup.SchemaOf<BodyInfo> = yup.object().shape({
     neckLine: yup.number().required(),
     hipLine: yup.number().required(),
   }),
-  activity: yup.mixed<Activity>().oneOf(Object.values(Activity)).required(),
-  pregnancy: yup.mixed<Pregnancy>().oneOf(Object.values(Pregnancy)).required(),
+  activity: yup
+    .number()
+    .oneOf(Array.from(Array(Object.keys(Activity).length / 2).keys()))
+    .required(),
+  pregnancy: yup
+    .number()
+    .oneOf(Array.from(Array(Object.keys(Pregnancy).length / 2).keys()))
+    .required(),
 });
 
 export function InputForm() {
@@ -34,7 +43,13 @@ export function InputForm() {
     resolver: yupResolver(schema),
   });
 
-  const { control, handleSubmit, watch, setValue } = methods;
+  const {
+    control,
+    handleSubmit,
+    watch,
+    setValue,
+    formState: { errors },
+  } = methods;
 
   const gender = watch('gender');
 
@@ -51,8 +66,14 @@ export function InputForm() {
   }, [localStorage, setBodyInfo]);
 
   useEffect(() => {
-    if (gender === Gender.Male) setValue('pregnancy', Pregnancy.None);
+    if (Number(gender) === Gender.Male) setValue('pregnancy', Pregnancy.None);
   }, [gender, setValue]);
+
+  useEffect(() => {
+    if (Object.keys(errors).length > 0) {
+      console.error(errors);
+    }
+  }, [errors]);
 
   return (
     <FormProvider {...methods}>
@@ -70,7 +91,7 @@ export function InputForm() {
         <InputField.Waist />
 
         <SelectField.Activity />
-        <SelectField.Pregnancy disabled={gender === Gender.Male} />
+        <SelectField.Pregnancy disabled={Number(gender) === Gender.Male} />
 
         <button type="submit" className="btn col-span-2 mt-2 bg-teal md:col-span-1 md:mt-auto">
           計算

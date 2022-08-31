@@ -5,5 +5,25 @@
   "meta": {
     "slogan": "計算你的健康指標",
     "source": "王介立醫師"
+  },
+  "enum": {
+    "gender": {
+      "Male": "男",
+      "Female": "女"
+    },
+    "activity": {
+      "Sedentary": "幾乎不動",
+      "Light": "輕度",
+      "Moderate": "中度",
+      "Active": "重度",
+      "VeryActive": "極重度"
+    },
+    "pregnancy": {
+      "None": "",
+      "FirstTrimester": "第一孕期",
+      "SecondTrimester": "第二孕期",
+      "ThirdTrimester": "第三孕期",
+      "Breastfeeding": "哺乳"
+    }
   }
 }

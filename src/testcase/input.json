@@ -15,9 +15,9 @@
             "supraspinale": 20
         },
         "bodyFat": 20,
-        "gender": "男",
-        "activity": "幾乎不動",
-        "pregnancy": ""
+        "gender": 0,
+        "activity": 0,
+        "pregnancy": 0
     },
     {
         "birth": "1980-07-22",
@@ -35,9 +35,9 @@
             "supraspinale": 20
         },
         "bodyFat": 20,
-        "gender": "男",
-        "activity": "幾乎不動",
-        "pregnancy": ""
+        "gender": 0,
+        "activity": 0,
+        "pregnancy": 0
     },
     {
         "birth": "1990-07-22",
@@ -55,9 +55,9 @@
             "supraspinale": 20
         },
         "bodyFat": 20,
-        "gender": "男",
-        "activity": "幾乎不動",
-        "pregnancy": ""
+        "gender": 0,
+        "activity": 0,
+        "pregnancy": 0
     },
     {
         "birth": "1980-07-22",
@@ -75,9 +75,9 @@
             "supraspinale": 20
         },
         "bodyFat": 20,
-        "gender": "女",
-        "activity": "幾乎不動",
-        "pregnancy": ""
+        "gender": 1,
+        "activity": 0,
+        "pregnancy": 0
     },
     {
         "birth": "1980-07-22",
@@ -95,9 +95,9 @@
             "supraspinale": 20
         },
         "bodyFat": 20,
-        "gender": "男",
-        "activity": "幾乎不動",
-        "pregnancy": ""
+        "gender": 0,
+        "activity": 0,
+        "pregnancy": 0
     },
     {
         "birth": "1980-07-22",
@@ -115,9 +115,9 @@
             "supraspinale": 20
         },
         "bodyFat": 20,
-        "gender": "男",
-        "activity": "幾乎不動",
-        "pregnancy": ""
+        "gender": 0,
+        "activity": 0,
+        "pregnancy": 0
     },
     {
         "birth": "2000-07-22",
@@ -135,9 +135,9 @@
             "supraspinale": 20
         },
         "bodyFat": 20,
-        "gender": "男",
-        "activity": "幾乎不動",
-        "pregnancy": ""
+        "gender": 0,
+        "activity": 0,
+        "pregnancy": 0
     },
     {
         "birth": "1990-07-22",
@@ -155,8 +155,8 @@
             "supraspinale": 20
         },
         "bodyFat": 20,
-        "gender": "男",
-        "activity": "幾乎不動",
-        "pregnancy": ""
+        "gender": 0,
+        "activity": 0,
+        "pregnancy": 0
     }
 ]

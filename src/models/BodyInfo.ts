@@ -1,45 +1,45 @@
 /** 活動量 */
 export enum Activity {
   /** 幾乎不動 */
-  Sedentary = '幾乎不動',
+  Sedentary,
 
   /** 輕度 */
-  Light = '輕度',
+  Light,
 
   /** 中度 */
-  Moderate = '中度',
+  Moderate,
 
   /** 重度 */
-  Active = '重度',
+  Active,
 
   /** 極重度 */
-  VeryActive = '極重度',
+  VeryActive,
 }
 
 /** 性別 */
 export enum Gender {
   /** 男 */
-  Male = '男',
+  Male,
 
   /** 女 */
-  Female = '女',
+  Female,
 }
 
 /** 懷孕哺乳狀態 */
 export enum Pregnancy {
-  None = '',
+  None,
 
   /** 第一孕期 */
-  FirstTrimester = '第一孕期',
+  FirstTrimester,
 
   /** 第二孕期 */
-  SecondTrimester = '第二孕期',
+  SecondTrimester,
 
   /** 第三孕期 */
-  ThirdTrimester = '第三孕期',
+  ThirdTrimester,
 
   /** 哺乳 */
-  Breastfeeding = '哺乳',
+  Breastfeeding,
 }
 
 /** 圍度 */
