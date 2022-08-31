@@ -24,7 +24,12 @@ function bodyFitFemale(sumSkinfolds: Decimal, age: Decimal) {
 function fn(bodyInfo: BodyInfo) {
   const { gender, birth, skinfolds } = bodyInfo;
 
-  const sumSkinfolds = Decimal.sum(...Object.values(skinfolds));
+  const skinfoldValues = Object.values(skinfolds);
+  if (skinfoldValues.length !== 4 && skinfoldValues.some((v) => v === undefined)) {
+    return '-';
+  }
+
+  const sumSkinfolds = Decimal.sum(...skinfoldValues);
   const age = new Decimal(yearfrac(birth, new Date()));
 
   if (gender === Gender.Male) {

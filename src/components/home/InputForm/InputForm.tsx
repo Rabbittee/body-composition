@@ -14,17 +14,41 @@ const schema: yup.SchemaOf<BodyInfo> = yup.object().shape({
   gender: yup.mixed<Gender>().oneOf(Object.values(Gender)).required(),
   height: yup.number().required(),
   weight: yup.number().required(),
-  bodyFat: yup.number().nullable(),
+  bodyFat: yup
+    .number()
+    .transform((value) => (isNaN(value) ? undefined : value))
+    .optional(),
   lines: yup.object().shape({
-    waistLine: yup.number(),
-    neckLine: yup.number(),
-    hipLine: yup.number(),
+    waistLine: yup
+      .number()
+      .transform((value) => (isNaN(value) ? undefined : value))
+      .optional(),
+    neckLine: yup
+      .number()
+      .transform((value) => (isNaN(value) ? undefined : value))
+      .optional(),
+    hipLine: yup
+      .number()
+      .transform((value) => (isNaN(value) ? undefined : value))
+      .optional(),
   }),
   skinfolds: yup.object().shape({
-    abdominal: yup.number(),
-    thigh: yup.number(),
-    triceps: yup.number(),
-    supraspinale: yup.number(),
+    abdominal: yup
+      .number()
+      .transform((value) => (isNaN(value) ? undefined : value))
+      .optional(),
+    thigh: yup
+      .number()
+      .transform((value) => (isNaN(value) ? undefined : value))
+      .optional(),
+    triceps: yup
+      .number()
+      .transform((value) => (isNaN(value) ? undefined : value))
+      .optional(),
+    supraspinale: yup
+      .number()
+      .transform((value) => (isNaN(value) ? undefined : value))
+      .optional(),
   }),
   activity: yup.mixed<Activity>().oneOf(Object.values(Activity)).required(),
   pregnancy: yup.mixed<Pregnancy>().oneOf(Object.values(Pregnancy)).required(),
@@ -42,15 +66,15 @@ export function InputForm() {
     pregnancy: localStorage?.pregnancy ?? defaultBodyInfo.pregnancy,
     bodyFat: localStorage?.bodyFat,
     lines: {
-      waistLine: localStorage?.lines.waistLine,
-      neckLine: localStorage?.lines.neckLine,
-      hipLine: localStorage?.lines.hipLine,
+      waistLine: localStorage?.lines?.waistLine,
+      neckLine: localStorage?.lines?.neckLine,
+      hipLine: localStorage?.lines?.hipLine,
     },
     skinfolds: {
-      abdominal: localStorage?.skinfolds.abdominal,
-      thigh: localStorage?.skinfolds.thigh,
-      triceps: localStorage?.skinfolds.triceps,
-      supraspinale: localStorage?.skinfolds.supraspinale,
+      abdominal: localStorage?.skinfolds?.abdominal,
+      thigh: localStorage?.skinfolds?.thigh,
+      triceps: localStorage?.skinfolds?.triceps,
+      supraspinale: localStorage?.skinfolds?.supraspinale,
     },
   };
 
@@ -59,7 +83,13 @@ export function InputForm() {
     resolver: yupResolver(schema),
   });
 
-  const { control, handleSubmit, watch, setValue } = methods;
+  const {
+    control,
+    handleSubmit,
+    watch,
+    setValue,
+    formState: { errors },
+  } = methods;
 
   const gender = watch('gender');
 
@@ -78,6 +108,12 @@ export function InputForm() {
   useEffect(() => {
     if (gender === Gender.Male) setValue('pregnancy', Pregnancy.None);
   }, [gender, setValue]);
+
+  useEffect(() => {
+    if (Object.keys(errors).length > 0) {
+      console.error(errors);
+    }
+  }, [errors]);
 
   return (
     <FormProvider {...methods}>
