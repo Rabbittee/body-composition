@@ -38,13 +38,7 @@ export function InputForm() {
     resolver: yupResolver(schema),
   });
 
-  const {
-    control,
-    handleSubmit,
-    watch,
-    setValue,
-    formState: { errors },
-  } = methods;
+  const { control, handleSubmit, watch, setValue } = methods;
 
   const gender = watch('gender');
 
