@@ -64,12 +64,6 @@ export function InputForm() {
     if (Number(gender) === Gender.Male) setValue('pregnancy', Pregnancy.None);
   }, [gender, setValue]);
 
-  useEffect(() => {
-    if (Object.keys(errors).length > 0) {
-      console.error(errors);
-    }
-  }, [errors]);
-
   return (
     <FormProvider {...methods}>
       <DevTool control={control} placement="top-left" />
