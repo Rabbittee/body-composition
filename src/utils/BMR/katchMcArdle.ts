@@ -24,7 +24,7 @@ function fn(bodyInfo: BodyInfo) {
 
   let LBM = new Decimal(0);
 
-  if (bodyFat !== undefined && bodyFat !== null) {
+  if (bodyFat !== undefined) {
     LBM = LBMBase(weight, bodyFat);
   } else if (gender === Gender.Male) {
     LBM = LBMMale(weight, height);

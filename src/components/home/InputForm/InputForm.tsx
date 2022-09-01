@@ -83,13 +83,7 @@ export function InputForm() {
     resolver: yupResolver(schema),
   });
 
-  const {
-    control,
-    handleSubmit,
-    watch,
-    setValue,
-    formState: { errors },
-  } = methods;
+  const { control, handleSubmit, watch, setValue } = methods;
 
   const gender = watch('gender');
 
@@ -108,12 +102,6 @@ export function InputForm() {
   useEffect(() => {
     if (gender === Gender.Male) setValue('pregnancy', Pregnancy.None);
   }, [gender, setValue]);
-
-  useEffect(() => {
-    if (Object.keys(errors).length > 0) {
-      console.error(errors);
-    }
-  }, [errors]);
 
   return (
     <FormProvider {...methods}>
