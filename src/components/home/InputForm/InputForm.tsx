@@ -9,12 +9,13 @@ import { Activity, BodyInfo, Gender, Pregnancy } from 'models';
 import { defaultBodyInfo, useStore } from 'store';
 import { InputField, SelectField } from '..';
 
+function notNan(value: number) {
+  return !isNaN(value);
+}
+
 const schema: yup.SchemaOf<BodyInfo> = yup.object().shape({
   birth: yup.string().required(),
-  gender: yup
-    .number()
-    .oneOf(Array.from(Array(Object.keys(Gender).length / 2).keys()))
-    .required(),
+  gender: yup.number().oneOf(Object.keys(Gender).map(Number).filter(notNan)).required(),
   height: yup.number().required(),
   weight: yup.number().required(),
   bodyFat: yup.number().required(),
@@ -23,14 +24,8 @@ const schema: yup.SchemaOf<BodyInfo> = yup.object().shape({
     neckLine: yup.number().required(),
     hipLine: yup.number().required(),
   }),
-  activity: yup
-    .number()
-    .oneOf(Array.from(Array(Object.keys(Activity).length / 2).keys()))
-    .required(),
-  pregnancy: yup
-    .number()
-    .oneOf(Array.from(Array(Object.keys(Pregnancy).length / 2).keys()))
-    .required(),
+  activity: yup.number().oneOf(Object.keys(Activity).map(Number).filter(notNan)).required(),
+  pregnancy: yup.number().oneOf(Object.keys(Pregnancy).map(Number).filter(notNan)).required(),
 });
 
 export function InputForm() {
