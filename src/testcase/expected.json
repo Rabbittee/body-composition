@@ -33,7 +33,7 @@
         "BMI": "20.1",
         "WHtR": "0.50",
         "bodyFat": {
-            "skinfolds": "15",
+            "skinfolds": "15.0",
             "lines": "21.2"
         },
         "BMR": {
@@ -92,7 +92,7 @@
         "WHtR": "0.50",
         "bodyFat": {
             "skinfolds": "14.4",
-            "lines": "29"
+            "lines": "29.0"
         },
         "BMR": {
             "robertsonAndReidLow": "1215",
@@ -120,7 +120,7 @@
         "BMI": "24.7",
         "WHtR": "0.50",
         "bodyFat": {
-            "skinfolds": "15",
+            "skinfolds": "15.0",
             "lines": "21.2"
         },
         "BMR": {
@@ -149,7 +149,7 @@
         "BMI": "30.9",
         "WHtR": "0.50",
         "bodyFat": {
-            "skinfolds": "15",
+            "skinfolds": "15.0",
             "lines": "21.2"
         },
         "BMR": {

@@ -12,6 +12,9 @@ function fn(bodyInfo: BodyInfo) {
     height,
     lines: { waistLine },
   } = bodyInfo;
+  if (waistLine === undefined) {
+    return '-';
+  }
   return new Decimal(waistLine).div(height).toFixed(2);
 }
 
