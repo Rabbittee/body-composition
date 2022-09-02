@@ -9,13 +9,9 @@ import { Activity, BodyInfo, Gender, Pregnancy } from 'models';
 import { defaultBodyInfo, useStore } from 'store';
 import { InputField, SelectField } from '..';
 
-function notNan(value: number) {
-  return !isNaN(value);
-}
-
 const schema: yup.SchemaOf<BodyInfo> = yup.object().shape({
   birth: yup.string().required(),
-  gender: yup.number().oneOf(Object.keys(Gender).map(Number).filter(notNan)).required(),
+  gender: yup.mixed<Gender>().oneOf(Object.values(Gender)).required(),
   height: yup.number().required(),
   weight: yup.number().required(),
   bodyFat: yup.number().required(),
@@ -24,8 +20,8 @@ const schema: yup.SchemaOf<BodyInfo> = yup.object().shape({
     neckLine: yup.number().required(),
     hipLine: yup.number().required(),
   }),
-  activity: yup.number().oneOf(Object.keys(Activity).map(Number).filter(notNan)).required(),
-  pregnancy: yup.number().oneOf(Object.keys(Pregnancy).map(Number).filter(notNan)).required(),
+  activity: yup.mixed<Activity>().oneOf(Object.values(Activity)).required(),
+  pregnancy: yup.mixed<Pregnancy>().oneOf(Object.values(Pregnancy)).required(),
 });
 
 export function InputForm() {
@@ -55,7 +51,7 @@ export function InputForm() {
   }, [localStorage, setBodyInfo]);
 
   useEffect(() => {
-    if (Number(gender) === Gender.Male) setValue('pregnancy', Pregnancy.None);
+    if (gender === Gender.Male) setValue('pregnancy', Pregnancy.None);
   }, [gender, setValue]);
 
   return (
@@ -74,7 +70,7 @@ export function InputForm() {
         <InputField.Waist />
 
         <SelectField.Activity />
-        <SelectField.Pregnancy disabled={Number(gender) === Gender.Male} />
+        <SelectField.Pregnancy disabled={gender === Gender.Male} />
 
         <button type="submit" className="btn col-span-2 mt-2 bg-teal md:col-span-1 md:mt-auto">
           計算
