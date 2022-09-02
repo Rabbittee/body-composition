@@ -1,4 +1,5 @@
 import { useFormContext } from 'react-hook-form';
+import { useTranslation } from 'react-i18next';
 import { genList } from 'utils/enumHelper';
 import { SelectFieldType, SELECT_TYPE } from '../SelectFieldType';
 
@@ -10,6 +11,7 @@ type Props = {
 };
 
 export function SelectFieldBase({ type, disabled = false }: Props) {
+  const { t } = useTranslation();
   const { register } = useFormContext();
   const { name, text, sourceType, defaultIndex = 0 } = SELECT_TYPE[type];
   const source = genList(sourceType);
@@ -28,7 +30,7 @@ export function SelectFieldBase({ type, disabled = false }: Props) {
       >
         {source.map(({ key, value }) => (
           <option key={key} value={value}>
-            {value}
+            {t(`enum.${name}.${key as string}`)}
           </option>
         ))}
       </select>

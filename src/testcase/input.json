@@ -15,8 +15,8 @@
             "supraspinale": 20
         },
         "bodyFat": 20,
-        "gender": "男",
-        "activity": "幾乎不動",
+        "gender": "male",
+        "activity": "sedentary",
         "pregnancy": ""
     },
     {
@@ -35,8 +35,8 @@
             "supraspinale": 20
         },
         "bodyFat": 20,
-        "gender": "男",
-        "activity": "幾乎不動",
+        "gender": "male",
+        "activity": "sedentary",
         "pregnancy": ""
     },
     {
@@ -55,8 +55,8 @@
             "supraspinale": 20
         },
         "bodyFat": 20,
-        "gender": "男",
-        "activity": "幾乎不動",
+        "gender": "male",
+        "activity": "sedentary",
         "pregnancy": ""
     },
     {
@@ -75,8 +75,8 @@
             "supraspinale": 20
         },
         "bodyFat": 20,
-        "gender": "女",
-        "activity": "幾乎不動",
+        "gender": "female",
+        "activity": "sedentary",
         "pregnancy": ""
     },
     {
@@ -95,8 +95,8 @@
             "supraspinale": 20
         },
         "bodyFat": 20,
-        "gender": "男",
-        "activity": "幾乎不動",
+        "gender": "male",
+        "activity": "sedentary",
         "pregnancy": ""
     },
     {
@@ -115,8 +115,8 @@
             "supraspinale": 20
         },
         "bodyFat": 20,
-        "gender": "男",
-        "activity": "幾乎不動",
+        "gender": "male",
+        "activity": "sedentary",
         "pregnancy": ""
     },
     {
@@ -135,8 +135,8 @@
             "supraspinale": 20
         },
         "bodyFat": 20,
-        "gender": "男",
-        "activity": "幾乎不動",
+        "gender": "male",
+        "activity": "sedentary",
         "pregnancy": ""
     },
     {
@@ -155,8 +155,8 @@
             "supraspinale": 20
         },
         "bodyFat": 20,
-        "gender": "男",
-        "activity": "幾乎不動",
+        "gender": "male",
+        "activity": "sedentary",
         "pregnancy": ""
     }
 ]

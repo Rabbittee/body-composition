@@ -5,5 +5,25 @@
   "meta": {
     "slogan": "Knowing your health status",
     "source": "Dr. Wang"
+  },
+  "enum": {
+    "gender": {
+      "Male": "Male",
+      "Female": "Female"
+    },
+    "activity": {
+      "Sedentary": "Sedentary",
+      "Light": "Light",
+      "Moderate": "Moderate",
+      "Active": "Active",
+      "VeryActive": "Very Active"
+    },
+    "pregnancy": {
+      "None": "",
+      "FirstTrimester": "First Trimester",
+      "SecondTrimester": "Second Trimester",
+      "ThirdTrimester": "Third Trimester",
+      "Breastfeeding": "Breastfeeding"
+    }
   }
 }
