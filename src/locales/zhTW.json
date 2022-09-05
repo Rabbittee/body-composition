@@ -24,54 +24,20 @@
   },
   "meta": {
     "slogan": "計算你的健康指標",
-    "source": "王介立醫師",
-    "dailyHeatSuggest": "每日熱量攝取建議",
-    "waistAndHight": "腰身高比",
-    "basalMetabolism": "基礎代謝率",
-    "bodySurfaceArea": "體表面積",
-    "tdee": "TDEE"
-  },
-  "options": {
-    "male": "男性",
-    "female": "女性",
-<<<<<<< HEAD
-    "scarcely": "幾乎不動",
-    "mild": "輕度",
-    "moderate": "中度",
-    "severe": "重度",
-    "moderateToSevere": "中重度",
-    "verySevere": "極重度",
-    "first": "第一孕期",
-    "second": "第二孕期",
-    "thirth": "第三孕期",
-    "suckle": "哺乳"
-=======
-    "sedentary": "幾乎不動",
-    "light": "輕度",
-    "moderate": "中度",
-    "active": "重度",
-    "veryActive": "極重度",
-    "firstTrimester": "第一孕期",
-    "secondTrimester": "第二孕期",
-    "thirdTrimester": "第三孕期",
-    "breastfeeding": "哺乳"
->>>>>>> fix: 🐛 rename and prettier json files
+    "source": "王介立醫師"
   },
   "info": {
     "dailyCalories": "根據活動量及最低BMR計算",
     "WHtR": "<0.5無風險; ≥0.6高風險",
     "basalMetabolism": "適用於肥胖者",
-<<<<<<< HEAD
-    "Katch-McArdle": "計算包含體脂",
-=======
     "KatchMcArdle": "計算包含體脂",
->>>>>>> fix: 🐛 rename and prettier json files
     "FAO": "來自FAO的營養研究",
     "Redman": "來自雙標水研究",
     "Dubois": "肥胖者會低估3-5%",
     "DuboisCorrected": "校正肥胖不準確",
     "Yu": "研究來自台灣工人",
-    "Haycock": "可適用BSA 0.2-2.0(嬰兒適用)"
+    "Haycock": "可適用BSA 0.2-2.0(嬰兒適用)",
+    "support": "僅支援18歲至80歲之年齡"
   },
   "enum": {
     "gender": {

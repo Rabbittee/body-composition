@@ -24,24 +24,7 @@
   },
   "meta": {
     "slogan": "Knowing your health status",
-    "source": "Dr. Wang",
-    "dailyHeatSuggest": "daily heat suggest",
-    "waistAndHight": "waist to height ratio",
-    "basalMetabolism": "basal metabolic rate",
-    "bodySurfaceArea": "body surface area"
-  },
-  "options": {
-    "male": "Male",
-    "female": "Female",
-    "sedentary": "Sedentary",
-    "light": "Light",
-    "moderate": "Moderate",
-    "active": "Active",
-    "veryActive": "Very Active",
-    "firstTrimester": "First Trimester",
-    "secondTrimester": "Second Trimester",
-    "thirdTrimester": "Third Trimester",
-    "breastfeeding": "Breastfeeding"
+    "source": "Dr. Wang"
   },
   "info": {
     "dailyCalories": "Calculated based on activity level and minimum BMR",
@@ -55,5 +38,25 @@
     "Yu": "Research from Taiwanese workers",
     "Haycock": "Applicable to BSA 0.2-2.0 (for infants)",
     "support": "Only supports ages 18 to 80"
+  },
+  "enum": {
+    "gender": {
+      "Male": "Male",
+      "Female": "Female"
+    },
+    "activity": {
+      "Sedentary": "Sedentary",
+      "Light": "Light",
+      "Moderate": "Moderate",
+      "Active": "Active",
+      "VeryActive": "Very Active"
+    },
+    "pregnancy": {
+      "None": "",
+      "FirstTrimester": "First Trimester",
+      "SecondTrimester": "Second Trimester",
+      "ThirdTrimester": "Third Trimester",
+      "Breastfeeding": "Breastfeeding"
+    }
   }
 }
