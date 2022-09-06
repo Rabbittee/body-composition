@@ -25,7 +25,6 @@ export function ResultList({ optionType: { title, options } }: Props) {
           </option>
         ))}
       </select>
-
       <ResultValue option={selected} title={title} />
     </div>
   );

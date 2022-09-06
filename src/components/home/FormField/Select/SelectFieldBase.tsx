@@ -19,7 +19,7 @@ export function SelectFieldBase({ type, disabled = false }: Props) {
   return (
     <div className="form-control">
       <label className="label">
-        <span className="label-text text-blueGray">{text}</span>
+        <span className="label-text text-blueGray">{t(text)}</span>
       </label>
 
       <select

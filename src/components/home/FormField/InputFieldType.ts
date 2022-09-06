@@ -23,9 +23,14 @@ type FieldTypeMap = {
 };
 
 export const INPUT_TYPE: FieldTypeMap = {
-  [InputFieldType.Birth]: { name: 'birth', type: 'date', text: '生日', placeholder: '2001-01-01' },
-  [InputFieldType.Height]: { name: 'height', text: '身高(公分)', placeholder: '175' },
-  [InputFieldType.Weight]: { name: 'weight', text: '體重(公斤)', placeholder: '70' },
-  [InputFieldType.BodyFat]: { name: 'bodyFat', text: '體脂(%)', placeholder: '20' },
-  [InputFieldType.Waist]: { name: 'lines.waistLine', text: '腰圍(公分)', placeholder: '79' },
+  [InputFieldType.Birth]: {
+    name: 'birth',
+    type: 'date',
+    text: 'common.birth',
+    placeholder: '2001-01-01',
+  },
+  [InputFieldType.Height]: { name: 'height', text: 'common.height', placeholder: '175' },
+  [InputFieldType.Weight]: { name: 'weight', text: 'common.weight', placeholder: '70' },
+  [InputFieldType.BodyFat]: { name: 'bodyFat', text: 'common.bodyFat', placeholder: '20' },
+  [InputFieldType.Waist]: { name: 'waist', text: 'common.waistLine', placeholder: '79' },
 };

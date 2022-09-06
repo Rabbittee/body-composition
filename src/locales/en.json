@@ -1,10 +1,43 @@
 {
   "common": {
-    "source": "Source: "
+    "source": "Source: ",
+    "calculate": "Calculate",
+    "gender": "Gender",
+    "birth": "Birthday",
+    "height": "Height (cm)",
+    "weight": "Weight (kg)",
+    "bodyFat": "Body Fat (%)",
+    "waistLine": "Waistline (cm)",
+    "neckLine": "NeckLine (cm)",
+    "hipLine": "HipLine (cm)",
+    "skinfoldAbdomenWall": "Skinfold Thickness: Abdomen Wall (mm)",
+    "skinfoldThigh": "Skinfold Thickness: Thigh (mm)",
+    "skinfoldThreeHeads": "Skinfold Thickness: Three Heads (mm)",
+    "skinfoldIntestines": "Skinfold Thickness: Intestines (mm)",
+    "activity": "Activity Level",
+    "pregnancy": "Pregnancy",
+    "dailyCalories": "Daily Calories (kcal)",
+    "WHtR": "Waist to Height Ratio",
+    "BMR": "Basal Metabolic Rate (kcal)",
+    "BSA": "Body Surface Area",
+    "tdee": "TDEE (kcal)"
   },
   "meta": {
     "slogan": "Knowing your health status",
     "source": "Dr. Wang"
+  },
+  "info": {
+    "dailyCalories": "Calculated based on activity level and minimum BMR",
+    "WHtR": "<0.5 no risk; ≥0.6 high risk",
+    "basalMetabolism": "Suitable for obese",
+    "KatchMcArdle": "Calculate body fat",
+    "FAO": "Nutrition research from FAO",
+    "Redman": "From Double-Standard Water Research",
+    "Dubois": "Obese people underestimate by 3-5%",
+    "DuboisCorrected": "correcting for obesity inaccurate",
+    "Yu": "Research from Taiwanese workers",
+    "Haycock": "Applicable to BSA 0.2-2.0 (for infants)",
+    "support": "Only supports ages 18 to 80"
   },
   "enum": {
     "gender": {

@@ -1,10 +1,43 @@
 {
   "common": {
-    "source": "Source: "
+    "source": "Source: ",
+    "calculate": "計算",
+    "gender": "性別",
+    "birth": "生日",
+    "height": "身高(公分)",
+    "weight": "體重(公斤)",
+    "bodyFat": "體脂(%)",
+    "waistLine": "腰圍(公分)",
+    "neckLine": "頸圍(公分)",
+    "hipLine": "臀圍(公分)",
+    "skinfoldAbdomenWall": "皮摺厚度:腹壁(mm)",
+    "skinfoldThigh": "皮摺厚度:大腿(mm)",
+    "skinfoldThreeHeads": "皮摺厚度:三頭(mm)",
+    "skinfoldIntestines": "皮摺厚度:腸骨上(mm)",
+    "activity": "活動量",
+    "pregnancy": "懷孕哺乳狀態",
+    "dailyCalories": "每日熱量攝取建議(仟卡)",
+    "WHtR": "腰圍身高比",
+    "BMR": "基礎代謝率(仟卡)",
+    "BSA": "體表面積",
+    "tdee": "TDEE(仟卡)"
   },
   "meta": {
     "slogan": "計算你的健康指標",
     "source": "王介立醫師"
+  },
+  "info": {
+    "dailyCalories": "根據活動量及最低BMR計算",
+    "WHtR": "<0.5無風險; ≥0.6高風險",
+    "basalMetabolism": "適用於肥胖者",
+    "KatchMcArdle": "計算包含體脂",
+    "FAO": "來自FAO的營養研究",
+    "Redman": "來自雙標水研究",
+    "Dubois": "肥胖者會低估3-5%",
+    "DuboisCorrected": "校正肥胖不準確",
+    "Yu": "研究來自台灣工人",
+    "Haycock": "可適用BSA 0.2-2.0(嬰兒適用)",
+    "support": "僅支援18歲至80歲之年齡"
   },
   "enum": {
     "gender": {

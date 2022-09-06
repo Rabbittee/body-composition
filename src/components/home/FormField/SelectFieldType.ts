@@ -18,18 +18,18 @@ type FieldTypeMap = {
 export const SELECT_TYPE: FieldTypeMap = {
   [SelectFieldType.Gender]: {
     name: 'gender',
-    text: '性別',
+    text: 'common.gender',
     sourceType: Gender,
   },
   [SelectFieldType.Activity]: {
     name: 'activity',
-    text: '活動量',
+    text: 'common.activity',
     sourceType: Activity,
     defaultIndex: 2,
   },
   [SelectFieldType.Pregnancy]: {
     name: 'pregnancy',
-    text: '懷孕哺乳狀態',
+    text: 'common.pregnancy',
     sourceType: Pregnancy,
   },
 };
