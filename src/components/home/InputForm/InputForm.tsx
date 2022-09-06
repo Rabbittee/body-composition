@@ -38,6 +38,8 @@ const schema: yup.SchemaOf<BodyInfo> = yup.object().shape({
     .max(100)
     .min(0)
     .required()
+    .transform((value) => (isNaN(value) ? undefined : value))
+    .optional()
     .test('is-decimal', 'BodyFat must be a 1 decimal places number', (value) =>
       decimalCheck(value, 1)
     ),
@@ -47,6 +49,8 @@ const schema: yup.SchemaOf<BodyInfo> = yup.object().shape({
       .max(310)
       .min(20)
       .required()
+      .transform((value) => (isNaN(value) ? undefined : value))
+      .optional()
       .test('is-decimal', 'Waist Line must be a 1 decimal places number', (value) =>
         decimalCheck(value, 1)
       ),
@@ -55,6 +59,8 @@ const schema: yup.SchemaOf<BodyInfo> = yup.object().shape({
       .max(80)
       .min(10)
       .required()
+      .transform((value) => (isNaN(value) ? undefined : value))
+      .optional()
       .test('is-decimal', 'Neck Line must be a 1 decimal places number', (value) =>
         decimalCheck(value, 1)
       ),
@@ -63,11 +69,30 @@ const schema: yup.SchemaOf<BodyInfo> = yup.object().shape({
       .max(240)
       .min(10)
       .required()
+      .transform((value) => (isNaN(value) ? undefined : value))
+      .optional()
       .test('is-decimal', 'Hip Line must be a 1 decimal places number', (value) =>
         decimalCheck(value, 1)
       ),
   }),
-
+  skinfolds: yup.object().shape({
+    abdominal: yup
+      .number()
+      .transform((value) => (isNaN(value) ? undefined : value))
+      .optional(),
+    thigh: yup
+      .number()
+      .transform((value) => (isNaN(value) ? undefined : value))
+      .optional(),
+    triceps: yup
+      .number()
+      .transform((value) => (isNaN(value) ? undefined : value))
+      .optional(),
+    supraspinale: yup
+      .number()
+      .transform((value) => (isNaN(value) ? undefined : value))
+      .optional(),
+  }),
   activity: yup.mixed<Activity>().oneOf(Object.values(Activity)).required(),
   pregnancy: yup.mixed<Pregnancy>().oneOf(Object.values(Pregnancy)).required(),
 });
@@ -75,7 +100,26 @@ const schema: yup.SchemaOf<BodyInfo> = yup.object().shape({
 export function InputForm() {
   const [localStorage, setLocalStorage] = useLocalStorage<BodyInfo>(CONFIG.storageKey);
 
-  const userBodyInfo = { ...defaultBodyInfo, ...localStorage };
+  const userBodyInfo = {
+    birth: localStorage?.birth ?? defaultBodyInfo.birth,
+    gender: localStorage?.gender ?? defaultBodyInfo.gender,
+    height: localStorage?.height ?? defaultBodyInfo.height,
+    weight: localStorage?.weight ?? defaultBodyInfo.weight,
+    activity: localStorage?.activity ?? defaultBodyInfo.activity,
+    pregnancy: localStorage?.pregnancy ?? defaultBodyInfo.pregnancy,
+    bodyFat: localStorage?.bodyFat,
+    lines: {
+      waistLine: localStorage?.lines?.waistLine,
+      neckLine: localStorage?.lines?.neckLine,
+      hipLine: localStorage?.lines?.hipLine,
+    },
+    skinfolds: {
+      abdominal: localStorage?.skinfolds?.abdominal,
+      thigh: localStorage?.skinfolds?.thigh,
+      triceps: localStorage?.skinfolds?.triceps,
+      supraspinale: localStorage?.skinfolds?.supraspinale,
+    },
+  };
 
   const methods = useForm<BodyInfo>({
     defaultValues: userBodyInfo,
