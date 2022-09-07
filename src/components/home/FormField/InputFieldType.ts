@@ -32,5 +32,5 @@ export const INPUT_TYPE: FieldTypeMap = {
   [InputFieldType.Height]: { name: 'height', text: 'common.height', placeholder: '175' },
   [InputFieldType.Weight]: { name: 'weight', text: 'common.weight', placeholder: '70' },
   [InputFieldType.BodyFat]: { name: 'bodyFat', text: 'common.bodyFat', placeholder: '20' },
-  [InputFieldType.Waist]: { name: 'waist', text: 'common.waistLine', placeholder: '79' },
+  [InputFieldType.Waist]: { name: 'lines.waistLine', text: 'common.waistLine', placeholder: '79' },
 };
