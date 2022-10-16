@@ -18,7 +18,7 @@
         },
         "TDEE": {
             "FAO": "3201",
-            "redman": "2588"
+            "redman": "2589"
         },
         "BSA": {
             "doubois": "1.83",
@@ -47,7 +47,7 @@
         },
         "TDEE": {
             "FAO": "3201",
-            "redman": "2565"
+            "redman": "2566"
         },
         "BSA": {
             "doubois": "1.83",
@@ -62,7 +62,7 @@
         "BMI": "20.1",
         "WHtR": "0.50",
         "bodyFat": {
-            "skinfolds": "13.4",
+            "skinfolds": "13.5",
             "lines": "21.2"
         },
         "BMR": {
@@ -76,7 +76,7 @@
         },
         "TDEE": {
             "FAO": "3201",
-            "redman": "2542"
+            "redman": "2543"
         },
         "BSA": {
             "doubois": "1.83",
@@ -105,7 +105,7 @@
         },
         "TDEE": {
             "FAO": "2590",
-            "redman": "2227"
+            "redman": "2228"
         },
         "BSA": {
             "doubois": "1.83",
@@ -207,7 +207,7 @@
         "BMI": "20.1",
         "WHtR": "0.50",
         "bodyFat": {
-            "skinfolds": "13.4",
+            "skinfolds": "13.5",
             "lines": "21.2"
         },
         "BMR": {
@@ -221,7 +221,7 @@
         },
         "TDEE": {
             "FAO": "3201",
-            "redman": "2542"
+            "redman": "2543"
         },
         "BSA": {
             "doubois": "1.83",
